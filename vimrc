@@ -9,16 +9,36 @@ let mapleader = ","
 " Move across splits
 nnoremap <leader>sh :sp<CR>
 nnoremap <leader>sv :vsp<CR>
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+nnoremap <leader><down> <C-w>j
+nnoremap <leader><up> <C-w>k
+nnoremap <leader><left> <C-w>h
+nnoremap <leader><right> <C-w>l
+nnoremap <leader>sH <C-w>|
+nnoremap <leader>sW <C-w>_
+nnoremap <leader>sr <C-w>=
 set splitbelow
 set splitright
 
 " Select blocks after indenting
 vnoremap < <gv
 vnoremap > >gv
+
+source $HOME/.vimtokens
+
+" Limelight integration to Goyo
+function! GoyoBefore()
+   Limelight
+endfunction
+
+function! GoyoAfter()
+   Limelight!
+endfunction
+
+let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
+let g:limelight_conceal_ctermfg = 8
+
+nnoremap <leader>V :Goyo<CR>
+nnoremap <leader>L :Limelight!!<CR>
 
 " View whitespace
 nnoremap <leader>l :set list!<CR>
@@ -44,10 +64,10 @@ set ruler
 set backspace=indent,eol,start
 
 """""" VUNDLE 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " vundle
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 " follow VCS changes in the left gutter
 Plugin 'mhinz/vim-signify'
 " Fugitive
@@ -57,14 +77,16 @@ Plugin 'jaxbot/github-issues.vim'
 " JSON syntax
 Plugin 'elzr/vim-json'
 " distraction-free with <leader>V
-Plugin 'BenoitZugmeyer/vimroom'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 " pandoc
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-pandoc/vim-pandoc-after'
 Plugin 'vim-pandoc/vim-pandoc'
 " less syntax
 Plugin 'groenewege/vim-less'
 " scss syntax
-Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'tpope/vim-haml'
 " CSS colors
 Plugin 'ap/vim-css-color'
 " better javascript syntax
@@ -85,10 +107,10 @@ Plugin 'tpope/vim-surround'
 " Liquid markup
 Plugin 'tpope/vim-liquid'
 " Snippets
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 " ipython
 Plugin 'ivanov/vim-ipython'
 " julia
@@ -96,17 +118,24 @@ Plugin 'JuliaLang/julia-vim'
 " Autoclose brackets
 Plugin 'Townk/vim-autoclose'
 " Theme
-Plugin 'tpoisot/vim-base16-term'
+Plugin 'file:///home/tp/Projects/Code/xr.vim'
 " Ctags
 Plugin 'majutsushi/tagbar'
 " NERD Tree with git support
-Plugin 'Xuyuanp/nerdtree'
+Plugin 'Xuyuanp/git-nerdtree'
 " LaTeX-Suite
-Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
+"Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " Create gists
-Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+" Haskell
+Plugin 'lukerandall/haskellmode-vim'
+" Passive voice
+Plugin 'jamestomasino/vim-writingsyntax'
+" Marks with m.
+Plugin 'kshenoy/vim-signature'
 """""" END VUNDLE
+call vundle#end()
 
 " python
 let python_highlight_all = 1
@@ -120,10 +149,12 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 
 "Liquid
-let g:pandoc_use_embeds_in_codeblocks_for_langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
+let g:pandoc#synatx#codeblock#embeds#langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
+let g:liquid_highlight_types = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
 
 "SuperTab!
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<C-x><C-o>"
+"let g:SuperTabDefaultCompletionType = "context"
 
 " NeoComplete
 let g:neocomplete#enable_at_startup = 0
@@ -138,7 +169,7 @@ nnoremap <leader>k :! Rscript -e "library(knitr);knit(input='%', output='%:r.md'
 set scrolloff=3
 
 "Search is not highlighted
-set nohlsearch
+"set nohlsearch
 
 "Files are read as soon as they are changed
 set autoread
@@ -161,14 +192,17 @@ set t_Co=256
 let base16colorspace=256
 
 set background=light
-colorscheme base16
+colorscheme xr
+
+" Rainbow delimiters
+"let g:rainbow_active = 0
 
 """""" Various writing improvements
 
-" New signs for the pandoc bundle
-let g:pandoc_syntax_user_cchars = {'atx': '¶', 'codelang': '>', 'footnote': '§', 'definition': '»', 'newline': '¬'}
+" Passive voice and such
+nnoremap <leader>P :setf writing<CR>
 
-"Rmd and Rpres are pandoc
+" Rmd and Rpres are pandoc
 au BufRead,BufNewFile *.Rmd,*.Rpres setfiletype pandoc
 
 " Format paragraphs with <leader>q
@@ -183,8 +217,8 @@ nnoremap <leader>{{ :vimgrep /{\w\+}}/ %<CR>:copen<CR>
 
 
 "Bib file for pandoc
-let g:pandoc_bibfiles = ['/home/tp/texmf/bibtex/bib/local/library.bib']
-"let g:pandoc_use_bibtool = 1
+let g:pandoc#biblio#sources = "bcltg"
+let g:pandoc_use_bibtool = 1
 
 "Indentation parameters
 set autoindent
@@ -198,17 +232,9 @@ set smarttab
 " This line is needed for bib files
 set grepprg=grep\ -nH\ $*
 
-" Latex kind of stuff
-let g:Tex_BIBINPUTS = "/home/tp/texmf/bibtex/bib/local/library.bib"
-let g:Tex_BibtexFlavor = 'bibtex'
-let g:Tex_Flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-set iskeyword+=:
-
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
 " GitHub access token
-let g:github_access_token = "f8dfb0560ec35045a19e5f1eebba73d137f7cff7"
 let g:github_upstream_issues = 1
 
 " tagbar markdown
@@ -238,3 +264,19 @@ let g:tagbar_type_r = {
 \ }
 " Gist options
 let g:gist_detect_filetype = 1
+let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_api_url = 'https://api.github.com/'
+
+let g:signify_sign_add               = '+'
+let g:signify_sign_change            = '~'
+let g:signify_sign_delete            = '-'
+let g:signify_sign_delete_first_line = '^'
+
+
+" Julia
+let g:julia_auto_latex_to_unicode = 1
+
+" Indent Lines
+"let g:indentLine_char = '│'
+"let g:indentLine_color_term = 15
+

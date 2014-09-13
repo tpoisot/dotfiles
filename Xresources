@@ -1,24 +1,20 @@
-xterm*termname: xterm-256color
+XTerm*termname: xterm-256color
 XTerm*locale: true
 
-Xft.dpi: 118
+Xft.dpi: 96
 Xft.lcdfilter: lcddefault
-Xft.antialias: true
-Xft.rgba: rgba
-Xft.hinting: true
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.rgba: rgb
+Xft.hinting: 1
 Xft.hintstyle: hintfull
 
 URxvt*.cursorBlink: 1
-*.font: xft:Andale Mono:size=8
 
-urxvt*perl-ext-common: fullscreen
-urxvt*keysym.F11: perl:fullscreen:switch
+*.font: xft:PragmataPro:size=8
 
 URxvt.scrollBar: false
 URxvt*depth: 32
-URxvt*geometry: 88x30
-!URxvt*fading: 1
+URxvt*geometry: 88x25
 
-URxvt*iconFile: /usr/share/icons/Numix-Circle/48x48/applications/terminal.svg
-
-#include ".schemes/base16-brewer.light.xresources"
+#include ".schemes/satori.xresources"

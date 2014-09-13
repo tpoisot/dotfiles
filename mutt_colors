@@ -1,18 +1,21 @@
 # vim: filetype=muttrc
 
+color sidebar_new green default
+
 # Header
 color hdrdefault cyan default
 
 # Specific headers
-color header blue default "Subject: " 
+color header green default "Subject: " 
+color header green default "From: " 
 
 # Attachment within the message
 color attachment yellow default 
 
 # Levels of quoted previous messages
-color quoted green default 
-color quoted1 cyan default 
-color quoted2 green default 
+color quoted blue default 
+color quoted1 green default
+color quoted2 magenta default
 color quoted3 cyan default 
 
 # Messages
@@ -23,17 +26,18 @@ color indicator black yellow # indicator for the "current message"
 
 color status blue default# status lines in the folder index sed for the mini-help line 
 
-
-color tree cyan default # the "tree" display of threads within the folder index 
+color tree blue default # the "tree" display of threads within the folder index 
 
 color search brightgreen default # search matches found with search within the internal pager 
 color markers black default # The markers indicate a wrapped line 
-color index brightgreen default '~N'
-color index brightblue default '~F' # Flagged Messages are important! 
-color index brightred default '~D' # Messages flagged for deletion
+color index brightblue default '~N' # unread, new
+color index green default '~O' # unread, not new
+color index red default '~D' # flagged for deletion
+color index brightyellow default '~T' # tagged
+color index magenta default '~F' # tagged
 
 # identifies email addresses 
-color body green default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color body blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
 
 # identifies URLs 
-color body red default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+color body yellow default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
