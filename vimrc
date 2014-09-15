@@ -6,7 +6,7 @@ set cursorline
 " Replace <Leader> with ,
 let mapleader = ","
 
-" Move across splits
+" SPLITS "{{{
 nnoremap <leader>sh :sp<CR>
 nnoremap <leader>sv :vsp<CR>
 nnoremap <leader><down> <C-w>j
@@ -18,10 +18,7 @@ nnoremap <leader>sW <C-w>_
 nnoremap <leader>sr <C-w>=
 set splitbelow
 set splitright
-
-" Select blocks after indenting
-vnoremap < <gv
-vnoremap > >gv
+"}}}
 
 source $HOME/.vimtokens
 
@@ -63,7 +60,8 @@ set ruler
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 
-"""""" VUNDLE 
+
+" VUNDLE "{{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " vundle
@@ -134,8 +132,13 @@ Plugin 'lukerandall/haskellmode-vim'
 Plugin 'jamestomasino/vim-writingsyntax'
 " Marks with m.
 Plugin 'kshenoy/vim-signature'
+" Wordy
+Plugin 'reedes/vim-wordy'
+" Etherpad
+Plugin 'guyzmo/vim-etherpad'
 """""" END VUNDLE
 call vundle#end()
+"}}}
 
 " python
 let python_highlight_all = 1
@@ -149,7 +152,6 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 
 "Liquid
-let g:pandoc#synatx#codeblock#embeds#langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
 let g:liquid_highlight_types = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
 
 "SuperTab!
@@ -197,7 +199,9 @@ colorscheme xr
 " Rainbow delimiters
 "let g:rainbow_active = 0
 
-"""""" Various writing improvements
+
+
+" WRITING bindings "{{{
 
 " Passive voice and such
 nnoremap <leader>P :setf writing<CR>
@@ -213,14 +217,19 @@ augroup markers
    autocmd! BufEnter *.md,*.mkd,*.txt,*.Rmd,*.Rpres match Error '{{\w\+}}'
 augroup END
 nnoremap <leader>{{ :vimgrep /{\w\+}}/ %<CR>:copen<CR>
-"""""" END
+"}}}
 
 
-"Bib file for pandoc
+
+" PANDOC options "{{{
+let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
-let g:pandoc_use_bibtool = 1
+let g:pandoc#synatx#codeblock#embeds#langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
+"}}}
 
-"Indentation parameters
+
+
+" INDENTATION "{{{
 set autoindent
 set cindent
 set softtabstop=3
@@ -228,6 +237,10 @@ set tabstop=3
 set shiftwidth=3
 set expandtab
 set smarttab
+" Select blocks after indenting
+vnoremap < <gv
+vnoremap > >gv
+"}}}
 
 " This line is needed for bib files
 set grepprg=grep\ -nH\ $*
@@ -279,4 +292,3 @@ let g:julia_auto_latex_to_unicode = 1
 " Indent Lines
 "let g:indentLine_char = '│'
 "let g:indentLine_color_term = 15
-
