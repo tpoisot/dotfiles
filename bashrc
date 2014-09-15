@@ -5,19 +5,20 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:/home/tp/.gem/ruby/2.1.0/bin:/home/tp/.cabal/bin
+export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.cabal/bin:$HOME/Mathematica/scripts
 
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -lGFh'
 alias grep='grep --color=auto'
 
 alias edit='vim'
 
+alias mutt='cd && mutt'
+alias cabal='/home/tp/.cabal/bin/cabal'
+
 unset SSH_ASKPASS
 
-# Base 16 scheme
-/home/tp/.schemes/shell/base16-brewer.dark.sh
-# Solarized dir colors
-#eval `dircolors /home/tp/.schemes/dir/solarized-light`
+source $HOME/.schemes/pscolors
+eval "$(dircolors $HOME/.schemes/dircolors)"
 
 # Needed for git status in the prompt
 source /usr/share/git/git-prompt.sh 
@@ -26,4 +27,4 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
-export PS1='\[\e]0;\w\a\]\[\033[00;32m\]\W\[\033[0;31m\]$(__git_ps1) \[\033[00;33m\]\$\[\033[00m\] '
+export PS1='\[\e]0;\w\a\]\[\033[31m\][\[\033[0;92m\]\W\[\033[31m\]]\[\033[0;35m\]$(__git_ps1) \[\033[2;33m\]:\[\033[00m\] '

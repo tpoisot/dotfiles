@@ -16,7 +16,7 @@ scr: $(scripts)
 vimrc: $(vimrc)
 	cp $(vimrc) vimrc
 
-bash: $(bashrc)
+bashrc: $(bashrc)
 	cp $(bashrc) bashrc
 
 xresources: $(xresources)

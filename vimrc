@@ -116,7 +116,7 @@ Plugin 'JuliaLang/julia-vim'
 " Autoclose brackets
 Plugin 'Townk/vim-autoclose'
 " Theme
-Plugin 'file:///home/tp/Projects/Code/xr.vim'
+Plugin 'file:///home/tp/code/xr.vim'
 " Ctags
 Plugin 'majutsushi/tagbar'
 " NERD Tree with git support
@@ -135,7 +135,7 @@ Plugin 'kshenoy/vim-signature'
 " Wordy
 Plugin 'reedes/vim-wordy'
 " Etherpad
-Plugin 'guyzmo/vim-etherpad'
+"Plugin 'guyzmo/vim-etherpad'
 """""" END VUNDLE
 call vundle#end()
 "}}}
