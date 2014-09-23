@@ -27,4 +27,4 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
-export PS1='\[\e]0;\w\a\]\[\033[31m\][\[\033[0;92m\]\W\[\033[31m\]]\[\033[0;35m\]$(__git_ps1) \[\033[2;33m\]:\[\033[00m\] '
+export PS1='\[\e]0;\w\a\]\[\033[35m\][\[\033[0;92m\]\W\[\033[35m\]]\[\033[0;31m\]$(__git_ps1) \[\033[2;34m\]\$\[\033[00m\] '
