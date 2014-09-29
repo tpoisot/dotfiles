@@ -10,7 +10,7 @@ color header green default "Subject: "
 color header green default "From: " 
 
 # Attachment within the message
-color attachment yellow default 
+color attachment magenta default 
 
 # Levels of quoted previous messages
 color quoted blue default 
@@ -20,9 +20,9 @@ color quoted3 cyan default
 
 # Messages
 color error red default # error messages 
-color message yellow default # message informational messages 
+color message green default # message informational messages 
 
-color indicator black cyan # indicator for the "current message" 
+color indicator black white # indicator for the "current message" 
 
 color status blue default# status lines in the folder index sed for the mini-help line 
 
@@ -30,11 +30,11 @@ color tree blue default # the "tree" display of threads within the folder index
 
 color search brightgreen default # search matches found with search within the internal pager 
 color markers black default # The markers indicate a wrapped line 
-color index brightblue default '~N' # unread, new
-color index brightgreen default '~O' # unread, not new
+color index blue default '~N' # unread, new
+#color index green default '~O' # unread, not new
 color index red default '~D' # flagged for deletion
-color index cyan default '~T' # tagged
-color index brightmagenta default '~F' # tagged
+color index yellow default '~T' # tagged
+color index magenta default '~F' # tagged
 
 # identifies email addresses 
 color body blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+

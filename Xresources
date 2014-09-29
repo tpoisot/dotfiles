@@ -16,4 +16,4 @@ URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-#include ".schemes/d3.xresources"
+#include ".schemes/tomorrow.xresources"

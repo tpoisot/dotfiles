@@ -136,6 +136,8 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'reedes/vim-wordy'
 " Etherpad
 "Plugin 'guyzmo/vim-etherpad'
+" Graphviz
+Plugin 'wannesm/wmgraphviz.vim'
 """""" END VUNDLE
 call vundle#end()
 "}}}
