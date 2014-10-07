@@ -11,9 +11,10 @@ Xft.hintstyle: hintfull
 
 URxvt*.cursorBlink: 1
 
-*.font: xft:Consolas:size=8px
+*.font: xft:Input Mono Narrow Light:size=8px:style=Regular
+*.italicFont: xft:Input Mono Narrow Light:size=8px:style=Italic
 
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-#include ".schemes/tomorrow.xresources"
+#include ".schemes/brewer.xresources"

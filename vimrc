@@ -32,7 +32,7 @@ function! GoyoAfter()
 endfunction
 
 let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
-let g:limelight_conceal_ctermfg = 8
+let g:limelight_conceal_ctermfg = 15
 
 nnoremap <leader>V :Goyo<CR>
 nnoremap <leader>L :Limelight!!<CR>
@@ -121,8 +121,8 @@ Plugin 'file:///home/tp/code/xr.vim'
 Plugin 'majutsushi/tagbar'
 " NERD Tree with git support
 Plugin 'Xuyuanp/git-nerdtree'
-" LaTeX-Suite
-"Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" LaTeX
+Plugin 'lervag/vim-latex'
 " Create gists
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
@@ -144,8 +144,8 @@ call vundle#end()
 
 " python
 let python_highlight_all = 1
-let python_highlight_indent_errors = 0
-let python_highlight_space_errors = 0
+let python_highlight_indent_errors = 1
+let python_highlight_space_errors = 1
 
 " NERDTree
 nnoremap <leader>f :NERDTreeToggle<CR>
@@ -226,7 +226,7 @@ nnoremap <leader>{{ :vimgrep /{\w\+}}/ %<CR>:copen<CR>
 " PANDOC options "{{{
 let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
-let g:pandoc#synatx#codeblock#embeds#langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia']
+let g:pandoc#synatx#codeblock#embeds#langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia', 'make', 'sh', 'latex']
 "}}}
 
 
@@ -243,9 +243,6 @@ set smarttab
 vnoremap < <gv
 vnoremap > >gv
 "}}}
-
-" This line is needed for bib files
-set grepprg=grep\ -nH\ $*
 
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
@@ -277,20 +274,17 @@ let g:tagbar_type_r = {
         \ 'v:FunctionVariables',
     \ ]
 \ }
+
 " Gist options
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'xclip -selection clipboard'
 let g:gist_api_url = 'https://api.github.com/'
 
-let g:signify_sign_add               = '+'
-let g:signify_sign_change            = '~'
-let g:signify_sign_delete            = '-'
+let g:signify_sign_add               = '>'
+let g:signify_sign_change            = '-'
+let g:signify_sign_delete            = '<'
 let g:signify_sign_delete_first_line = '^'
 
 
 " Julia
 let g:julia_auto_latex_to_unicode = 1
-
-" Indent Lines
-"let g:indentLine_char = '│'
-"let g:indentLine_color_term = 15
