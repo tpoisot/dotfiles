@@ -4,11 +4,16 @@ xresources = ~/.Xresources
 muttrc = ~/.mutt/muttrc
 muttcol = ~/.mutt/colors
 scripts = ~/.scripts/*
+schemes = ~/.schemes/*.xresources
 
-all: folders vimrc bashrc xresources muttrc muttcol scripts
+all: folders vimrc bashrc xresources muttrc muttcol scripts schemes
 
 folders:
 	mkdir -p scripts
+	mkdir -p schemes
+
+schemes: $(schemes)
+	cp $(schemes) schemes
 
 scr: $(scripts)
 	cp $(scripts) scripts
