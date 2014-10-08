@@ -18,4 +18,4 @@ URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-#include ".schemes/mocha.xresources"
+#include ".schemes/tomorrow.xresources"
