@@ -35,6 +35,8 @@ color index blue default '~N' # unread, new
 color index red default '~D' # flagged for deletion
 color index yellow default '~T' # tagged
 color index magenta default '~F' # tagged
+color index cyan default '~v' # tagged
+color index green default '~v~(~N)' # tagged
 
 # identifies email addresses 
 color body blue default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+

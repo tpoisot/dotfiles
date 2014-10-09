@@ -11,11 +11,10 @@ Xft.hintstyle: hintfull
 
 URxvt*.cursorBlink: 1
 
-*.font: xft:Input Mono Narrow:size=8px:style=Regular
+*.font: xft:Input Mono Narrow Light:size=8px:style=Regular
 *.italicFont: xft:Input Mono Narrow Light:size=8px:style=Italic
-*.boldFont: xft:Input Mono Narrow:size=8px:style=Medium
 
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-#include ".schemes/tomorrow.xresources"
+#include ".schemes/flat.xresources"
