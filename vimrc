@@ -95,9 +95,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 " Neocomplete
 Plugin 'Shougo/neocomplete.vim'
-" R communication
-"Plugin 'jalvesaq/VimCom'
-"Plugin 'jcfaria/Vim-R-plugin'
 " Add END after begin
 Plugin 'tpope/vim-endwise'
 " Surround
@@ -126,8 +123,6 @@ Plugin 'lervag/vim-latex'
 " Create gists
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
-" Haskell
-Plugin 'lukerandall/haskellmode-vim'
 " Passive voice
 Plugin 'jamestomasino/vim-writingsyntax'
 " Marks with m.
