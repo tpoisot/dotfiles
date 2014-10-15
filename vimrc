@@ -125,10 +125,10 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 " Passive voice
 Plugin 'jamestomasino/vim-writingsyntax'
-" Marks with m.
-Plugin 'kshenoy/vim-signature'
 " Wordy
 Plugin 'reedes/vim-wordy'
+" Marks with m.
+Plugin 'kshenoy/vim-signature'
 " Etherpad
 "Plugin 'guyzmo/vim-etherpad'
 " Graphviz
@@ -189,9 +189,8 @@ syntax enable "Syntax coloration
 filetype plugin indent on
 
 set t_Co=256
-let base16colorspace=256
 
-set background=light
+set background=dark
 colorscheme xr
 
 " Rainbow delimiters

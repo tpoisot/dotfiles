@@ -11,8 +11,8 @@ Xft.hintstyle: hintfull
 
 URxvt*.cursorBlink: 1
 
-*.font: xft:PragmataPro:size=8px
-!*.italicFont: xft:Input Mono Narrow:size=8px:style=Italic
+!*.font: xft:PragmataPro:size=8px
+*.font: xft:Meslo LG S:size=8px
 
 !*.font: xft:Input Mono Condensed Light:size=8px:style=Regular
 !*.italicFont: xft:Input Mono Condensed Light:size=8px:style=Italic
