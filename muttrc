@@ -1,46 +1,117 @@
-source "$HOME/.mutt/gmail" ## With informations on my account
+# PATH
+set folder = ~/mail/
+set alias_file = ~/.mutt/alias
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set tmpdir = ~/.mutt/temp
+set signature = ~/.mutt/sig
 
-set sort='threads'         # sort by threads
-set nobeep                 # be quiet, minion, your beeping annoys me
-set fast_reply
-set smart_wrap
-set nomarkers
-set pager_context = 3      # show status in the pager
+# Basic options
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+set delete
+unset confirmappend
+set quit
+set pipe_decode
+set thorough_search
+set nomark_old
+
+# Some sidebar options
+set sidebar_delim = ' |'
+set sidebar_visible = yes
+set sidebar_width = 24
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+# A better status bar
+set status_chars =" *%A"
+set status_format = "---[ Folder: %f ]--[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]--%>-%?p?( %p postponed )?--"
+
+# Headers
+ignore *
+unignore from: to: cc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: date: subject:
+
+# Default account
+set spoolfile = "+GM/INBOX"
+mailboxes +GM/INBOX +UC/INBOX +GM/UdeM +GM/grants +GM/papers +GM/hpc +GM/edwork +GM/github +GM/innge +GM/ciee +GM/csbq +GM/sfe +GM/etu-phdp +GM/etu-rmck +GM/etu-amull +GM/etu-spoll +GM/etu-appli +GM/swcarp +GM/bib +GM/sent +UC/sent +GM/drafts +GM/trash
+#set mbox = "+GM/archive"
+set postponed = "+GM/drafts"
+macro index D "<save-message>+GM/trash<enter>"
+
+# Setup the index
+set date_format = "%m/%d"
+set index_format = "[%Z] %D %-20.20F %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0.9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Good keybindings
+bind index gg first-entry
+bind index G last-entry
+bind index R group-reply
+bind index <tab> sync-mailbox
+bind index <space> collapse-thread
+macro index O "<shell-escape>offlineimap -q<enter>"
+macro index C "<shell-escape>~/.scripts/contacts.sh<enter>"
+macro index M "<save-message>?<toggle-mailboxes>"
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>"
+bind index pagedown next-page
+bind pager pagedown next-page
+bind pager pageup previous-page
+
+# Pager options
+#set pager_index_lines = 10
+#set pager_context=3
 set pager_stop
-set delete = ask-yes
-set print = ask-yes
-set sort_aux = date-received
-#set nostrict_threads
-set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/enriched text/plain text/html 
-set nomark_old             # mark all unread messages as unread
+set menu_scroll
+set tilde
+unset markers
+alternative_order text/plain text/enriched text/html
 
-# Message index display
-set index_format = "%Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
+# Writing
+set realname = "Timothée Poisot"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set askcc
+set fcc_attach
+unset mime_forward
+set forward_format = "Fwd: %s"
+set forward_decode
+set attribution = "%n (%d):"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+set from = "tim@poisotlab.io"
+set sendmail = "/usr/bin/msmtp -a tpoisot"
+set sendmail_wait = 0
+unset record
+
+# Post-poning mails
+bind compose p postpone-message
+bind index p recall-message
 
 #My Editor
 set editor='vim + -c "set textwidth=80" -c "set wrap" -c "set nocp" -c "?^$"' 
-
-#Local Folders
-set header_cache =~/.mutt/cache/headers
-set message_cachedir =~/.mutt/cache/bodies 
-set certificate_file =~/.mutt/certificates 
-
-#Special Keybindings 
 bind editor <space> noop
-macro index,pager d "<save-message>+Archived<enter>" "Archive"
-macro index gi "=INBOX" "Go to inbox" 
-macro index gs "=[Gmail]/Messages envoyés" "Go to Sent Mail" 
-macro index gd "=[Gmail]/Brouillons" "Go to drafts" 
-macro index ga "=[Gmail]/Archived" "Go to archives" 
-mailboxes "=INBOX"
 
-#Mutt Session Security 
-set move = no #Stop asking to "move read messages to mbox"! 
-set imap_keepalive = 900 
-
-# Open URLs
-#macro pager \cu |urlview\n
-
-source "$HOME/.mutt/aliases"
 source "/home/tp/.mutt/colors"
+
+# Adresses from lbdb
+set query_command="lbdbq '%s'"
+
+# Duplicates
+set duplicate_threads = yes
+folder-hook . push "<delete-pattern>~=<enter>$"

@@ -6,7 +6,7 @@ muttcol = ~/.mutt/colors
 scripts = ~/.scripts/*
 schemes = ~/.schemes/*.xresources
 
-all: folders vimrc bashrc xresources muttrc muttcol scripts schemes
+all: folders vimrc bashrc xresources mutt muttcol scripts schemes
 
 folders:
 	mkdir -p scripts
