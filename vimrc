@@ -194,7 +194,7 @@ filetype plugin indent on
 
 set t_Co=256
 
-set background=dark
+set background=light
 colorscheme xr
 
 " Rainbow delimiters

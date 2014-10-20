@@ -11,13 +11,9 @@ Xft.hintstyle: hintfull
 
 URxvt*.cursorBlink: 1
 
-!*.font: xft:PragmataPro:size=8px
-*.font: xft:Meslo LG S:size=8px
-
-!*.font: xft:Input Mono Condensed Light:size=8px:style=Regular
-!*.italicFont: xft:Input Mono Condensed Light:size=8px:style=Italic
+*.font: xft:PragmataPro:size=8px
 
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-#include ".schemes/flat.xresources"
+#include ".schemes/flat2.xresources"
