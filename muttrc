@@ -1,5 +1,5 @@
 # PATH
-set folder = ~/mail/
+set folder = ~/mail/gmail
 set alias_file = ~/.mutt/alias
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
@@ -25,6 +25,7 @@ set nomark_old
 set sidebar_delim = ' |'
 set sidebar_visible = yes
 set sidebar_width = 24
+set sidebar_indentstr = '/'
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
 bind index,pager \CO sidebar-open
@@ -40,11 +41,11 @@ unhdr_order *
 hdr_order from: to: cc: date: subject:
 
 # Default account
-set spoolfile = "+GM/INBOX"
-mailboxes +GM/INBOX +UC/INBOX +GM/UdeM +GM/grants +GM/papers +GM/hpc +GM/edwork +GM/github +GM/innge +GM/ciee +GM/csbq +GM/sfe +GM/etu-phdp +GM/etu-rmck +GM/etu-amull +GM/etu-spoll +GM/etu-appli +GM/swcarp +GM/bib +GM/sent +UC/sent +GM/drafts +GM/trash
+set spoolfile = "+INBOX"
+mailboxes +INBOX +1 +2 +3 +4 +5 +star +drafts +sent +trash
 #set mbox = "+GM/archive"
-set postponed = "+GM/drafts"
-macro index D "<save-message>+GM/trash<enter>"
+set postponed = "+drafts"
+macro index D "<save-message>+trash<enter>"
 
 # Setup the index
 set date_format = "%m/%d"
@@ -61,8 +62,7 @@ bind index G last-entry
 bind index R group-reply
 bind index <tab> sync-mailbox
 bind index <space> collapse-thread
-macro index O "<shell-escape>offlineimap -q<enter>"
-macro index C "<shell-escape>~/.scripts/contacts.sh<enter>"
+macro index O "<shell-escape>mbsync -a<enter>"
 macro index M "<save-message>?<toggle-mailboxes>"
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>"
 bind index pagedown next-page
@@ -109,8 +109,10 @@ bind editor <space> noop
 
 source "/home/tp/.mutt/colors"
 
-# Adresses from lbdb
-set query_command="lbdbq '%s'"
+# Contacts from google
+set query_command="goobook query '%s'"
+bind editor <Tab> complete-query
+macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
 
 # Duplicates
 set duplicate_threads = yes

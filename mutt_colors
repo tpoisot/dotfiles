@@ -24,7 +24,7 @@ color message green default # message informational messages
 
 color indicator black white # indicator for the "current message" 
 
-color status blue default# status lines in the folder index sed for the mini-help line 
+color status brightwhite default# status lines in the folder index sed for the mini-help line 
 
 color tree blue default # the "tree" display of threads within the folder index 
 

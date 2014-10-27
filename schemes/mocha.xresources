@@ -1,7 +1,7 @@
 ! vim:syntax=xdefaults
 
-URxvt.background: #f5eeeb
-URxvt.foreground: #534636
+URxvt.foreground: #f5eeeb
+URxvt.background: #534636
 URxvt.cursorColor: #645240
 
 ! BLK
