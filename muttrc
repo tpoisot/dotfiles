@@ -22,9 +22,9 @@ set thorough_search
 set nomark_old
 
 # Some sidebar options
-set sidebar_delim = ' |'
+set sidebar_delim = '|'
 set sidebar_visible = yes
-set sidebar_width = 24
+set sidebar_width = 19
 set sidebar_indentstr = '/'
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next

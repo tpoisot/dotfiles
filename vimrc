@@ -194,7 +194,7 @@ filetype plugin indent on
 
 set t_Co=256
 
-set background=dark
+set background=light
 colorscheme xr
 
 " Rainbow delimiters
@@ -223,9 +223,11 @@ nnoremap <leader>{{ :vimgrep /{\w\+}}/ %<CR>:copen<CR>
 
 
 " PANDOC options "{{{
+
 let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
 let g:pandoc#synatx#codeblock#embeds#langs = ['ruby', 'vim', 'python', 'r', 'json', 'c', 'julia', 'make', 'sh', 'latex']
+
 "}}}
 
 

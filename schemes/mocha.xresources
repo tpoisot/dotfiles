@@ -1,12 +1,12 @@
 ! vim:syntax=xdefaults
 
-URxvt.foreground: #f5eeeb
-URxvt.background: #534636
+URxvt.foreground: #e9e1ed
+URxvt.background: #3b322b
 URxvt.cursorColor: #645240
 
 ! BLK
-URxvt*color0:   #7e705a
-URxvt*color8:   #b8afad
+URxvt*color0:   #534636
+URxvt*color8:   #645240
 
 ! RED
 URxvt*color1:   #cb6077
@@ -33,5 +33,5 @@ URxvt*color6:   #7bbda4
 URxvt*color14:  #8accb3
 
 ! WHT
-URxvt*color7:   #d0c8c6
-URxvt*color15:  #e9e1dd
+URxvt*color7:   #b8afad
+URxvt*color15:  #d0c8c6

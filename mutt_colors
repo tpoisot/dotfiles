@@ -22,18 +22,18 @@ color quoted3 cyan default
 color error red default # error messages 
 color message green default # message informational messages 
 
-color indicator brightwhite default # indicator for the "current message" 
+color indicator default white # indicator for the "current message" 
 
-color status white default# status lines in the folder index sed for the mini-help line 
+color status cyan default # status lines in the folder index sed for the mini-help line 
 
 color tree blue default # the "tree" display of threads within the folder index 
 
 color search brightgreen default # search matches found with search within the internal pager 
 color markers black default # The markers indicate a wrapped line 
-color index yellow default '~N' # unread, new
-color index red default '~D' # flagged for deletion
-color index green default '~T' # tagged
-color index magenta default '~F' # tagged
+color index black blue '~N' # unread, new
+color index black red '~D' # flagged for deletion
+color index black green '~T' # tagged
+color index black magenta '~F' # tagged
 color index cyan default '~v' # tagged
 color index brightcyan default '~v~(~N)' # tagged
 
