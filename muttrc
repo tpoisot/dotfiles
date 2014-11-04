@@ -22,7 +22,7 @@ set thorough_search
 set nomark_old
 
 # Some sidebar options
-set sidebar_delim = '|'
+set sidebar_delim = ' | '
 set sidebar_visible = yes
 set sidebar_width = 19
 set sidebar_indentstr = '/'
@@ -50,7 +50,7 @@ macro index D "<save-message>+trash<enter>"
 # Setup the index
 set date_format = "%m/%d"
 set index_format = "[%Z] %D %-20.20F %s"
-set sort = threads
+#set sort = threads
 set sort_aux = reverse-last-date-received
 set uncollapse_jump
 set sort_re

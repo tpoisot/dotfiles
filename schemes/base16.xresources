@@ -1,7 +1,7 @@
 ! vim: ft=xdefaults
 
 *foreground: #151515
-*background: #e0e0e0
+*background: #f5f5f5
 *cursorColor: #909090
 
 ! black
@@ -14,8 +14,8 @@
 *color2: #A1B56C
 *color10: #BBCF86
 ! yellow
-*color3: #d28445
-*color11: #ec9e5f
+*color3: #e2a463
+*color11: #fcbe7d
 ! blue
 *color4: #7CACF2
 *color12: #96C6FF

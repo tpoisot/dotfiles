@@ -12,9 +12,8 @@ Xft.hintstyle: hintfull
 URxvt*.cursorBlink: 1
 
 *.font: xft:PragmataPro:size=7
-*.font: xft:InputMono Condensed Light:size=7
 
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-#include ".schemes/base16.xresources"
+#include ".schemes/flat.xresources"

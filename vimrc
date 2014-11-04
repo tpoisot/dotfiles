@@ -61,80 +61,70 @@ set ruler
 set backspace=indent,eol,start
 
 
-" VUNDLE "{{{
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" vundle
-Plugin 'gmarik/Vundle.vim'
+" PLUGINS "{{{
+call plug#begin('~/.vim/plugged')
+
 " follow VCS changes in the left gutter
-Plugin 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 " Fugitive
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " GitHub issues
-Plugin 'jaxbot/github-issues.vim'
+Plug 'jaxbot/github-issues.vim'
 " JSON syntax
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 " distraction-free with <leader>V
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 " pandoc
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vim-pandoc/vim-pandoc-after'
-Plugin 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc-after'
+Plug 'vim-pandoc/vim-pandoc'
 " less syntax
-Plugin 'groenewege/vim-less'
+Plug 'groenewege/vim-less'
 " scss syntax
-Plugin 'tpope/vim-haml'
+Plug 'tpope/vim-haml'
 " CSS colors
-Plugin 'ap/vim-css-color'
+Plug 'ap/vim-css-color'
 " better javascript syntax
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 " (un)comment with <leader>c(u/c)
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 " use tab for auto-completion
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab'
 " Neocomplete
-Plugin 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 " Add END after begin
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 " Surround
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Liquid markup
-Plugin 'tpope/vim-liquid'
-" Snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plug 'tpope/vim-liquid'
 " ipython
-Plugin 'ivanov/vim-ipython'
+Plug 'ivanov/vim-ipython'
 " julia
-Plugin 'JuliaLang/julia-vim'
+Plug 'JuliaLang/julia-vim'
 " Autoclose brackets
-Plugin 'Townk/vim-autoclose'
+Plug 'Townk/vim-autoclose'
 " Theme
-Plugin 'file:///home/tp/code/xr.vim'
+Plug '~/code/xr.vim'
 " Ctags
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " NERD Tree with git support
-Plugin 'Xuyuanp/git-nerdtree'
+Plug 'Xuyuanp/git-nerdtree'
 " LaTeX
-Plugin 'lervag/vim-latex'
+Plug 'lervag/vim-latex'
 " Create gists
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
 " Passive voice
-Plugin 'jamestomasino/vim-writingsyntax'
+Plug 'jamestomasino/vim-writingsyntax'
 " Wordy
-Plugin 'reedes/vim-wordy'
+Plug 'reedes/vim-wordy'
 " Marks with m.
-Plugin 'kshenoy/vim-signature'
-" Etherpad
-"Plugin 'guyzmo/vim-etherpad'
+Plug 'kshenoy/vim-signature'
 " Graphviz
-Plugin 'wannesm/wmgraphviz.vim'
-"""""" END VUNDLE
-call vundle#end()
+Plug 'wannesm/wmgraphviz.vim'
+call plug#end()
 "}}}
 
 " python
