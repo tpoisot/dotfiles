@@ -1,0 +1,92 @@
+set folder = ~/.mail
+set alias_file = ~/.mutt/alias
+set signature = ~/.mutt/sig
+
+source "~/.mutt/colors"
+
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+unset move
+unset mark_old
+set delete
+unset confirmappend
+set quit
+set beep_new
+set pipe_decode
+set thorough_search
+
+set sidebar_delim = ' | '
+set sidebar_visible = yes
+set sidebar_width = 30
+
+ignore *
+unignore from: to: cc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: date: subject:
+
+set status_chars = " *%A"
+set status_format  = "---[%f]--[%r%m messages%?n? (%n new) ?%?d? (%d to delete)?%?t? (%t tagged)?]--%>-%?p?(%p postponed)?--"
+set date_format =  "%m/%d"
+set index_format = "[%Z] %D %-20.20F %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\]?; *)?(\[[^]]+\] *)?)*"
+
+unset markers
+
+set realname = "YOUR_NAME"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set askcc
+unset mime_forward
+set forward_format = "Fwd: %s"
+set forward_decode
+set attribution = "%n (%d):"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+set from = "YOUR_EMAIL"
+set sendmail = "msmtp"
+set sendmail_wait = 0
+set editor = "vim"
+
+bind index gg        first-entry
+bind index G         last-entry
+bind index R         group-reply
+bind index <tab>     sync-mailbox
+bind index <space>   collapse-thread
+macro index O "<shell-escape>offlineimap<enter>"
+macro index o "<shell-escape>offlineimap<enter> -q"
+
+macro index M "<save-message>?<toggle-mailboxes>" "Move to a mailbox"
+macro index d "<save-message>+Trash<enter>" "Move to trash"
+macro index A "<save-message>+Archives<enter>" "Move to archives"
+macro index I "<change-folder>=INBOX<enter>" "Goto inbox"
+
+macro index S "<enter-command>unset wait_key<enter><shell-escape>notmuch-mutt -r --prompt search<enter><change-folder-readonly>~/.cache/notmuch/mutt/results<enter>"
+
+bind index,pager <down> sidebar-next
+bind index,pager <up> sidebar-prev
+bind index,pager <right> sidebar-open
+
+bind compose p postpone-message
+bind index p recall-message
+
+set spoolfile = "+INBOX"
+set mbox = "+Archives"
+set postponed = "+Drafts"
+set record = "+Sent"
+
+source "~/.mutt/mailboxes"
+
+set query_command = "abook --mutt-query '%s'"
+macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "Add sender to abook"
+bind editor <Tab> complete-query
