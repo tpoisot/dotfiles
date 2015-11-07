@@ -25,7 +25,7 @@ theme.lblack = get_x_color(8)
 theme.dwhite = get_x_color(7)
 theme.lwhite = get_x_color(15)
 
-theme.font          = "Open Sans Semibold 10"
+theme.font          = "DejaVu Sans Condensed 10" 
 
 theme.bg_normal     = theme.lblack
 theme.bg_focus      = theme.dblack

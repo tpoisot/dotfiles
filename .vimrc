@@ -49,6 +49,8 @@ Plug 'vim-pandoc/vim-pandoc-after'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-criticmarkup'
 
+Plug 'antoyo/vim-licenses'
+
 call plug#end()
 
 " NERDTree
@@ -139,3 +141,5 @@ let g:julia_highlight_operators = 1
 let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
 let g:pandoc#syntax#codeblock#emebds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh']
+
+let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
