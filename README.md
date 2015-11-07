@@ -54,4 +54,4 @@ is auto-completion of references from the standard pandoc location
 
 ## But does it looks nice?
 
-![screenshot](https://github.com/tpoisot/dotfiels/raw/master/src/scrot.png)
+![screenshot](https://raw.githubusercontent.com/tpoisot/dotfiles/master/scrot.png)
