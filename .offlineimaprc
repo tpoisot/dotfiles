@@ -1,0 +1,29 @@
+[general]
+ui = ttyui
+accounts = tim
+
+[Account tim]
+localrepository = tim-local
+remoterepository = tim-remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository tim-local]
+type = Maildir
+localfolders = ~/.mail
+sep = /
+
+[Repository tim-remote]
+type = IMAP
+remoteuser = YOUR_EMAIL
+remotepass = YOUR_PWD
+remotehost = YOUR_SERVER
+maxconnections = 2
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(foldername)s"
+sep = " "
+footer = "\n"

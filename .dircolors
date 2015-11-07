@@ -1,0 +1,54 @@
+# General
+NORMAL 00
+FILE 00
+DIR 1;34
+LINK 3;40;33
+EXEC 1;31
+
+*Makefile 1;35
+*makefile 1;35
+
+*.r 33
+*.jl 33
+*.py 33
+
+*.md 32
+*.tex 32
+
+*.pdf 34
+
+*.json 35
+*.cson 35
+*.geojson 35
+*.yml 35
+*.Rdata 35
+*.csv 35
+
+*.doc 1;4;40;34
+*.docx 1;4;40;34
+*.xls 1;4;40;34
+*.xlsx 1;4;40;34
+
+*.c 36
+
+*.tar.gz 1;32
+*.zip 1;32
+
+*.log 30
+*.nav 30
+*.out 30
+*.pyg 30
+*.snm 30
+*.toc 30
+*.aux 30
+*.pyc 30
+*.cov 30
+
+*LICENSE 3;36
+*CONTRIBUTING 3;36
+*REQUIRE 3;36
+*README 3;36
+*LICENSE.md 3;36
+*REQUIRE 3;36
+*README.md 3;36
+*CONTRIBUTING.md 3;36
