@@ -14,4 +14,4 @@ URxvt*depth: 32
 
 *.font: xft:DejaVu Sans Mono:size=10
 
-#include ".schemes/base16.xresources"
+#include ".schemes/x.xresources"
