@@ -15,9 +15,10 @@ I use `awesome`. The theme will read the colors from `xrdb -q` (so it will
 look just like your terminal). The icons come from Font Awesome, so make
 sure to have that installed.
 
-The top bar give informations on network SSIDs, number of emails in the INBOX
-and in Drafts, number of `pacman` updates (because Arch), `/home` space used,
-date, time, and battery state. The widgets are updated every 10 seconds.
+The top bar give informations on network SSIDs, volume of speakers and
+microphone, number of emails in the INBOX and in Drafts, number of `pacman`
+updates (because Arch), `/home` space used, date, time, and battery state. The
+widgets are updated every 10 seconds.
 
 Most of the action happens in `.config/awesome/rc.lua`, notably the widgets. If
 you need to adapt them to the specifics of your system, this is where you

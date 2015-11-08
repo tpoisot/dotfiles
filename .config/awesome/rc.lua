@@ -269,20 +269,60 @@ for s = 1, screen.count() do
        myhdd:set_markup(ico_text .. " " .. status)
     end
     update_hdd()
+    
+    ico_mic_on = ""
+    ico_mic_off = ""
+    ico_vol_muted = ""
+    ico_vol_low = ""
+    ico_vol_high = ""
+    myvolume = wibox.widget.textbox()
+    function update_volume()
+       -- Mic status
+       mstatus = awful.util.pread("amixer get Mic | tail -n 1 | awk '{print $7}' | tr -d '\n'")
+       mcol = theme.green
+       mico = ico_mic_on
+       if mstatus == "[off]"
+       then
+          mcol = theme.red
+          mico = ico_mic_off
+       end
+       mtext = "<span color='" .. mcol ..  "'>" .. mico .. "</span>"
+       -- Sound status
+       sstatus = awful.util.pread("amixer get Master | tail -n 1 | awk '{print $6}' | tr -d '\n'")
+       svolume = tonumber(awful.util.pread("amixer get Master | tail -n 1 | awk '{print $4}' | tr -d '[]%' | tr -d '\n'"))
+       sico = ico_vol_low
+       if svolume > 50 then
+          sico = ico_vol_high
+       end
+       scol = theme.green
+       stex = svolume .. "%"
+       if sstatus == "[off]" then
+          sico = ico_vol_muted
+          scol = theme.red
+          stex = ""
+       end
+       stext = "<span color='" .. scol ..  "'>" .. sico .. "</span>" .. " " .. stex
+       -- Update
+       myvolume:set_markup(mtext .. "   " .. stext )
+    end
+    update_volume()
 
-    mytimer = timer({timeout = 10})
+    mytimer = timer({timeout = 5})
     mytimer:connect_signal("timeout", update_email)
     mytimer:connect_signal("timeout", update_updates)
     mytimer:connect_signal("timeout", update_time)
     mytimer:connect_signal("timeout", update_date)
     mytimer:connect_signal("timeout", update_battery)
     mytimer:connect_signal("timeout", update_network)
+    mytimer:connect_signal("timeout", update_volume)
     mytimer:start()
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 2 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mynetwork)
+    right_layout:add(mywidgetsep)
+    right_layout:add(myvolume)
     right_layout:add(mywidgetsep)
     right_layout:add(myemailcount)
     right_layout:add(mywidgetsep)
