@@ -1,0 +1,23 @@
+"amixer set Master toggle"
+   XF86AudioMute
+
+"amixer set Mic toggle"
+   XF86AudioMicMute
+
+"amixer set Master 1dB-"
+   XF86AudioLowerVolume
+
+"amixer set Master 1dB+"
+   XF86AudioRaiseVolume
+
+"xbacklight -dec 5"
+   XF86MonBrightnessDown
+
+"xbacklight -inc 5"
+   XF86MonBrightnessUp
+
+"scrot -q 100 -z '/home/tpoisot/screenshots/%Y-%m-%d_%Hh%Mm%S.png'"
+   Print
+
+"scrot -s -q 100 -z '/home/tpoisot/screenshots/%Y-%m-%d_%Hh%Mm%S.png'"
+   Shift+Mod2 + Shift_L + Print
