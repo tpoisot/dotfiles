@@ -24,6 +24,7 @@ EXEC 1;31
 *.yml 35
 *.Rdata 35
 *.csv 35
+*.tsv 35
 
 *.doc 1;4;40;36
 *.odt 1;4;40;36
@@ -37,15 +38,15 @@ EXEC 1;31
 *.tar.gz 1;32
 *.zip 1;32
 
-*.log 30
-*.nav 30
-*.out 30
-*.pyg 30
-*.snm 30
-*.toc 30
-*.aux 30
-*.pyc 30
-*.cov 30
+*.log 37
+*.nav 37
+*.out 37
+*.pyg 37
+*.snm 37
+*.toc 37
+*.aux 37
+*.pyc 37
+*.cov 37
 
 *LICENSE 3;36
 *CONTRIBUTING 3;36
