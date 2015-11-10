@@ -37,7 +37,9 @@ Plug 'tpoisot/xr.vim'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'Xuyuanp/git-nerdtree'
+
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'Townk/vim-autoclose'
