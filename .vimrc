@@ -107,6 +107,14 @@ set expandtab
 set smarttab
 set showmatch
 
+" Development notes
+if has("autocmd")
+   if v:version > 701
+      autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|BUG\)')
+      autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|CHANGED\|IDEA\|XXX\|HACK\)')
+   endif
+endif
+
 " Highlight search
 set incsearch
 set hlsearch
