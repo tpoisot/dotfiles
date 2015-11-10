@@ -132,7 +132,6 @@ noremap <Leader>p :set paste<CR>
 noremap <Leader>P :set paste<CR>
 
 set t_Co=256
-set background=dark
 colorscheme xr
 
 let g:julia_auto_latex_to_unicode = 1

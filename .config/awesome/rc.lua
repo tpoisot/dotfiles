@@ -43,6 +43,7 @@ beautiful.init(".config/awesome/themes/default/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nano"
+browser = os.getenv("BROWSER") or "vivaldi"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -94,7 +95,8 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "open terminal", terminal },
+                                    { "open browser", browser }
                                   }
                         })
 
