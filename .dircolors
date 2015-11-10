@@ -5,39 +5,60 @@ DIR 1;34
 LINK 3;40;33
 EXEC 1;31
 
+# Build systems
 *Makefile 1;35
 *makefile 1;35
 *rakefile 1;35
 
+# Interpreted
 *.r 33
+*.R 33
 *.jl 33
 *.py 33
 
+# Text
 *.md 32
+*.mkd 32
 *.tex 32
 
-*.pdf 34
+# PDF and images
+*.pdf 1;34
+*.png 34
+*.jpg 34
+*.jpeg 34
+*.gif 34
+*.tiff 34
 
+# Data files
 *.json 35
 *.cson 35
 *.geojson 35
 *.yml 35
-*.Rdata 35
 *.csv 35
 *.tsv 35
+*.dat 35
 
+# Excel, word, and co
 *.doc 1;4;40;36
 *.odt 1;4;40;36
 *.ods 1;4;40;36
 *.docx 1;4;40;36
 *.xls 1;4;40;36
 *.xlsx 1;4;40;36
+*.ppt 1;4;40;36
+*.pptx 1;4;40;36
 
+# Compiled languages
 *.c 36
+*.cpp 36
 
+# Archives and compressed things
 *.tar.gz 1;32
 *.zip 1;32
+*.Rdata 1;32
+*.grd 1;32
 
+# Things that should not be here
 *.log 37
 *.nav 37
 *.out 37
@@ -47,7 +68,9 @@ EXEC 1;31
 *.aux 37
 *.pyc 37
 *.cov 37
+*.vrb 37
 
+# FOSS typical files
 *LICENSE 3;36
 *CONTRIBUTING 3;36
 *REQUIRE 3;36
