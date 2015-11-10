@@ -4,8 +4,7 @@ They're the best. Handcrafted over the course of significantly less than
 a single generation. There are a lot of inter-dependencies, by the way. Be
 prepared for breakage if you only use a part of them.
 
-The fonts used are DejaVu Sans Condensed and DejaVu Sans Mono; and some Font
-Awesome for the top bar.
+You will need Font Awesome for the top bar.
 
 I use Arch Linux, so some widgets, paths, etc, may/will need to be adapted.
 
