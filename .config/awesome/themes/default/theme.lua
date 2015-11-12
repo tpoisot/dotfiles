@@ -4,6 +4,8 @@
 
 theme = {}
 
+theme.font          = "Liberation Sans 10"
+
 function get_x_color(x)
    command = "xrdb -q | grep color" .. x .. ": | awk '{print $2}'"
    f = io.popen(command, 'r')
@@ -24,8 +26,6 @@ theme.dblack = get_x_color(0)
 theme.lblack = get_x_color(8)
 theme.dwhite = get_x_color(7)
 theme.lwhite = get_x_color(15)
-
-theme.font          = "Noto Sans UI 10"
 
 theme.bg_normal     = theme.lblack
 theme.bg_focus      = theme.dblack

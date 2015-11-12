@@ -14,8 +14,8 @@ color message green default
 
 color tree white default
 
-color attachment magenta default
-color status brightblue default
+color attachment brightmagenta default
+color status blue default
 color search brightcyan default
 
 color indicator white black

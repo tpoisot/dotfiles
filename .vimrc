@@ -14,11 +14,14 @@ nnoremap j gj
 nnoremap k gk
 
 " Move across windows
+
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>l
+
 nnoremap <leader>h <C-w>h
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 nnoremap <leader>j <C-w>j
-nnoremap <leader>w <C-w>w<C-w>l
 set splitbelow
 set splitright
 
@@ -40,7 +43,7 @@ Plug 'tpoisot/xr.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeClose', 'NERDTreeOpen']}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
@@ -54,6 +57,10 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-criticmarkup'
 
 Plug 'antoyo/vim-licenses'
+
+Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less']}
+Plug 'skammer/vim-css-color', {'for': ['css', 'less']}
+Plug 'groenewege/vim-less', {'for': ['less']}
 
 call plug#end()
 

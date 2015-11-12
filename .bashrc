@@ -11,4 +11,6 @@ export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]
 
 export BROWSER="vivaldi"
 
+export PATH=$PATH:~/.gem/ruby/2.2.0/bin
+
 eval `dircolors .dircolors`
