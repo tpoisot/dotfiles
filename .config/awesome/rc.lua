@@ -309,15 +309,21 @@ for s = 1, screen.count() do
     end
     update_volume()
 
-    mytimer = timer({timeout = 5})
+    mytimer = timer({timeout = 300})
     mytimer:connect_signal("timeout", update_email)
     mytimer:connect_signal("timeout", update_updates)
-    mytimer:connect_signal("timeout", update_time)
     mytimer:connect_signal("timeout", update_date)
-    mytimer:connect_signal("timeout", update_battery)
-    mytimer:connect_signal("timeout", update_network)
-    mytimer:connect_signal("timeout", update_volume)
     mytimer:start()
+
+    medtimer = timer({timeout = 60})
+    medtimer:connect_signal("timeout", update_battery)
+    medtimer:start()
+
+    fasttimer = timer({timeout = 2 })
+    fasttimer:connect_signal("timeout", update_time)
+    fasttimer:connect_signal("timeout", update_network)
+    fasttimer:connect_signal("timeout", update_volume)
+    fasttimer:start()
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
