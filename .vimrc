@@ -47,6 +47,7 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeClose', 'NERDTree
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
+
 Plug 'Townk/vim-autoclose'
 
 Plug 'JuliaLang/julia-vim'

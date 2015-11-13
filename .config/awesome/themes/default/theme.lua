@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Noto Sans UI 10"
+theme.font          = "Source Sans Pro 10"
 
 function get_x_color(x)
    command = "xrdb -q | grep color" .. x .. ": | awk '{print $2}'"
@@ -16,14 +16,26 @@ function get_x_color(x)
 end
 
 theme.red = get_x_color(1)
+theme.lred = get_x_color(9)
+
 theme.green = get_x_color(2)
+theme.lgreen = get_x_color(10)
+
 theme.yellow = get_x_color(3)
+theme.lyellow = get_x_color(11)
+
 theme.blue = get_x_color(4)
+theme.lblue = get_x_color(12)
+
 theme.magenta = get_x_color(5)
+theme.lmagenta = get_x_color(13)
+
 theme.cyan = get_x_color(6)
+theme.lcyan = get_x_color(14)
 
 theme.dblack = get_x_color(0)
 theme.lblack = get_x_color(8)
+
 theme.dwhite = get_x_color(7)
 theme.lwhite = get_x_color(15)
 
@@ -39,9 +51,9 @@ theme.fg_urgent     = theme.lwhite
 theme.fg_minimize   = theme.dblack
 
 theme.border_width  = 2
-theme.border_normal = theme.lblack
-theme.border_focus  = theme.dwhite
-theme.border_marked = "#91231c"
+theme.border_normal = theme.dwhite
+theme.border_focus  = theme.lyellow
+theme.border_marked = theme.green
 
 theme.tasklist_bg_focus   = theme.bg_normal
 theme.taglist_fg_occupied = theme.fg_focus
