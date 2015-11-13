@@ -310,13 +310,13 @@ for s = 1, screen.count() do
     update_volume()
 
     mytimer = timer({timeout = 300})
-    mytimer:connect_signal("timeout", update_email)
     mytimer:connect_signal("timeout", update_updates)
     mytimer:connect_signal("timeout", update_date)
     mytimer:start()
 
-    medtimer = timer({timeout = 60})
+    medtimer = timer({timeout = 15})
     medtimer:connect_signal("timeout", update_battery)
+    medtimer:connect_signal("timeout", update_email)
     medtimer:start()
 
     fasttimer = timer({timeout = 2 })

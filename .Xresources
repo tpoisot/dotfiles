@@ -12,6 +12,6 @@ URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-*.font: xft:Source Code Pro:size=10
+*.font: xft:Roboto Mono:size=10
 
 #include ".schemes/x.xresources"
