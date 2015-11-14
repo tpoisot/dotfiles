@@ -40,7 +40,7 @@ call plug#begin("~/.vim/plugged")
 
 Plug 'tpoisot/xr.vim'
 
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeClose', 'NERDTreeOpen']}
