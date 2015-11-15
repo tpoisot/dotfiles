@@ -5,9 +5,26 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
+# Various ls aliases
+alias ls='ls --color=auto -F'  # use color
+alias lsh='ls -lh'          # list sizes
+alias lsa='lsh -A'          # and hidden files
 
-export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\]@\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;12m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;11m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+# Move around
+alias ..="cd .."
+alias df="df -h"
+
+# More sensical commands
+alias nano="nano -w"        # Nano -w
+alias mkdir="mkdir -p -v"   # Recursively create dirs
+alias ping="ping -c 3"      # Ping 3 times
+alias tree="tree -Chs"      # Show file sizes in tree
+
+# Grep
+alias grep='grep --color=auto'
+
+# PS1 -- user:dir > 
+export PS1="\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;7m\]:\[$(tput sgr0)\]\[\033[38;5;4m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;3m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 export BROWSER="vivaldi"
 
