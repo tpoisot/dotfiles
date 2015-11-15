@@ -12,7 +12,6 @@ URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-*.font: xft:Iosevka:size=10,xft:DejaVu Sans Mono:size=9
-*.font: xft:Consolas:size=10,xft:DejaVu Sans Mono:size=9
+*.font: xft:DejaVu Sans Mono:size=10
 
 #include ".schemes/x.xresources"

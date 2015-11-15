@@ -159,6 +159,9 @@ let g:julia_highlight_operators = 1
 
 let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
-let g:pandoc#syntax#codeblock#emebds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh']
+let g:pandoc#syntax#conceal#cchar_overrides = {
+   \"atx": "¶",
+   \"codelang": ">"}
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
