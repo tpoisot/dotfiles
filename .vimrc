@@ -48,6 +48,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
 
+Plug 'ervandew/supertab'
+
 Plug 'Townk/vim-autoclose'
 
 Plug 'JuliaLang/julia-vim'

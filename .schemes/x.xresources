@@ -1,11 +1,11 @@
 ! kantan Xresources template
-*.foreground: #f8f8f8
-*.background: [90]#151515
+*.foreground: #151515
+*.background: #fbfbfb
 *.cursorColor: #b0b0b0
 
 ! Black / Grey
-*.color0: #202020
-*.color8: #606060
+*.color0: #303030
+*.color8: #505050
 
 ! Red / Bright Red
 *.color1: #993a3b
