@@ -50,6 +50,9 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'ervandew/supertab'
 
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim', {'on': ['LimeLight', 'LimeLight!', 'LimeLight!!']}
+
 Plug 'Townk/vim-autoclose'
 
 Plug 'JuliaLang/julia-vim'
@@ -167,3 +170,10 @@ let g:pandoc#syntax#conceal#cchar_overrides = {
    \"codelang": ">"}
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
+
+let g:goyo_width = 82
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_priority = -1
+nnoremap <Leader>g :Goyo<CR>
