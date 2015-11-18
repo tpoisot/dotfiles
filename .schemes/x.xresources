@@ -5,7 +5,7 @@
 
 ! Black / Grey
 *.color0: #303030
-*.color8: #505050
+*.color8: #606060
 
 ! Red / Bright Red
 *.color1: #993a3b

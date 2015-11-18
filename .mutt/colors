@@ -20,7 +20,7 @@ color search brightcyan default
 
 color indicator brightblack  cyan
 color index     cyan   default '~N'
-color index     black  default '~D'
+color index     white  default '~D'
 color index     red    default '~T'
 color index     yellow default '~F'
 
