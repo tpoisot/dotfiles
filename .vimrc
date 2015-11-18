@@ -50,8 +50,8 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'ervandew/supertab'
 
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim', {'on': ['LimeLight', 'LimeLight!', 'LimeLight!!']}
+Plug 'junegunn/goyo.vim', {'on': ['Goyo']}
+Plug 'junegunn/limelight.vim'
 
 Plug 'Townk/vim-autoclose'
 
