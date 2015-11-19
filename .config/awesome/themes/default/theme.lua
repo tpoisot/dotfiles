@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Open Sans 10"
+theme.font          = "Source Sans Pro 10"
 
 function get_x_color(x)
    command = "xrdb -q | grep color" .. x .. ": | awk '{print $2}'"
@@ -39,8 +39,8 @@ theme.lblack = get_x_color(8)
 theme.dwhite = get_x_color(7)
 theme.lwhite = get_x_color(15)
 
-theme.bg_normal     = theme.lblack
-theme.bg_focus      = theme.dblack
+theme.bg_normal     = theme.dblack
+theme.bg_focus      = theme.lblack
 theme.bg_urgent     = theme.red
 theme.bg_minimize   = theme.bg_normal
 theme.bg_systray    = theme.bg_normal
