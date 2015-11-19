@@ -1,26 +1,23 @@
 # vim: filetype=muttrc
 
-# Transparent background
-# color index default red ~P
+color sidebar_new   brightgreen   default
 
-color sidebar_new brightgreen default
+color hdrdefault    white          default
+color header        brightcyan     default "Subject: "
+color header        brightcyan     default "From: "
 
-color hdrdefault white default
-color header brightcyan default "Subject: "
-color header brightcyan default "From: "
+color error         red            default
+color message       green          default
 
-color error red default
-color message green default
+color tree          white          default
 
-color tree white default
+color attachment    brightmagenta  default
+color status        blue           default
+color search        brightcyan     default
 
-color attachment brightmagenta default
-color status blue default
-color search brightcyan default
-
-color indicator brightcyan default
-color index     blue   default '~N'
-color index     white  default '~D'
-color index     red    default '~T'
-color index     yellow default '~F'
+color indicator     brightcyan     default
+color index         blue           default '~N'
+color index         black          default '~D'
+color index         red            default '~T'
+color index         yellow         default '~F'
 
