@@ -189,7 +189,7 @@ for s = 1, screen.count() do
 
     -- Tim's widgets
     mywidgetsep = wibox.widget.textbox()
-    mywidgetsep:set_markup("    <span color='" .. theme.dblack ..  "'></span>    ")
+    mywidgetsep:set_markup("    <span color='" .. theme.lblack ..  "'></span>    ")
 
     ico_unread = ""
     ico_postponed = ""

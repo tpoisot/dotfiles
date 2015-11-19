@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Source Sans Pro 10"
+theme.font          = "Open Sans 10"
 
 function get_x_color(x)
    command = "xrdb -q | grep color" .. x .. ": | awk '{print $2}'"
@@ -56,7 +56,10 @@ theme.border_focus  = theme.lyellow
 theme.border_marked = theme.green
 
 theme.tasklist_bg_focus   = theme.bg_normal
-theme.taglist_fg_occupied = theme.fg_focus
+
+theme.taglist_fg_occupied = theme.cyan
+theme.taglist_fg_focus = theme.yellow
+theme.taglist_bg_focus = theme.dblack
 
 -- There are other variable sets
 -- overriding the default one when
