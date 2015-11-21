@@ -1,37 +1,37 @@
 ! kantan Xresources template
-*.foreground: #f5f7fa
-*.background: #434a54
-*.cursorColor: #ccd1d9
+*.foreground: #191919
+*.background: #f9f9f9
+*.cursorColor: #b0b0b0
 
 ! Black / Grey
-*.color0: #656d78
-*.color8: #aab2bd
+*.color0: #303030
+*.color8: #606060
 
 ! Red / Bright Red
-*.color1: #e9573f
-*.color9: #fc6e51
+*.color1: #993a3b
+*.color9: #c25e5f
 
 ! Green / Bright Green
-*.color2: #8cc152
-*.color10: #a0d468
+*.color2: #82994f
+*.color10: #9bb26a
 
 ! Orange / Yellow
-*.color3: #f6bb42
-*.color11: #ffce54
+*.color3: #d28445
+*.color11: #f4bf77
 
 ! Blue / Bright Blue
-*.color4: #3bafda
-*.color12: #4fc1e9
+*.color4: #5994ad
+*.color12: #7baabd
 
 ! Magenta / Bright Magenta
-*.color5: #967adc
-*.color13: #ac92ec
+*.color5: #a06594
+*.color13: #b485aa
 
 ! Cyan / Bright Cyan
-*.color6: #37bc9b
-*.color14: #48cfad
+*.color6: #64aca0
+*.color14: #86beb4
 
 ! Light Grey / White
-*.color7: #ccd1d9
-*.color15: #e6e9ed
+*.color7: #b0b0b0
+*.color15: #d5d5d5
 

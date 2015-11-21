@@ -68,6 +68,8 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less']}
 Plug 'skammer/vim-css-color', {'for': ['css', 'less']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 
+Plug 'elzr/vim-json'
+
 call plug#end()
 
 " NERDTree
@@ -157,7 +159,9 @@ noremap <Leader>p :set paste<CR>
 noremap <Leader>P :set paste<CR>
 
 set t_Co=256
+set background=light
 colorscheme xr
+
 
 let g:julia_auto_latex_to_unicode = 1
 let g:julia_highlight_operators = 1
@@ -177,3 +181,4 @@ autocmd! User GoyoLeave Limelight!
 let g:limelight_conceal_ctermfg = 240
 let g:limelight_priority = -1
 nnoremap <Leader>g :Goyo<CR>
+

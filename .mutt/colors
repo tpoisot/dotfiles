@@ -15,9 +15,9 @@ color attachment    brightmagenta  default
 color status        blue           default
 color search        brightcyan     default
 
-color indicator     brightcyan     default
+color indicator     black          cyan
 color index         blue           default '~N'
-color index         black          default '~D'
+color index         white          default '~D'
 color index         red            default '~T'
 color index         yellow         default '~F'
 

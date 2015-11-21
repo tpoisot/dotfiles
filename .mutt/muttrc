@@ -90,3 +90,8 @@ source "~/.mutt/mailboxes"
 set query_command = "abook --mutt-query '%s'"
 macro index,pager a "<pipe-message>abook --add-email-quiet<return>" "Add sender to abook"
 bind editor <Tab> complete-query
+
+
+#Use w3m to open links
+macro index,pager \cB ": unset wait_key; set pipe_decode\n|w3m\n: set wait_key; unset pipe_decode\n" "call w3m to extract URLs out of a message"
+
