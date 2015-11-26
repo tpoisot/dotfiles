@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Fira Sans 10"
+theme.font          = "Noto Sans 10"
 
 function get_x_color(x)
    command = "xrdb -q | grep color" .. x .. ": | awk '{print $2}'"
@@ -46,12 +46,12 @@ theme.bg_minimize   = theme.bg_normal
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = theme.dwhite
-theme.fg_focus      = theme.lwhite
+theme.fg_focus      = theme.lyellow
 theme.fg_urgent     = theme.lwhite
 theme.fg_minimize   = theme.dblack
 
-theme.border_width  = 4
-theme.border_normal = theme.dwhite
+theme.border_width  = 2
+theme.border_normal = theme.lblack
 theme.border_focus  = theme.lyellow
 theme.border_marked = theme.green
 
