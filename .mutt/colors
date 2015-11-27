@@ -1,6 +1,6 @@
 # vim: filetype=muttrc
 
-color sidebar_new   brightgreen   default
+color sidebar_new   brightblue     default
 
 color hdrdefault    white          default
 color header        brightcyan     default "Subject: "
@@ -16,7 +16,7 @@ color status        blue           default
 color search        brightcyan     default
 
 color indicator     black          cyan
-color index         blue           default '~N'
+color index         brightblue     default '~N'
 color index         white          default '~D'
 color index         red            default '~T'
 color index         yellow         default '~F'
