@@ -9,7 +9,7 @@ set mbox_type = Maildir
 set timeout = 3
 set mail_check = 0
 unset move
-unset mark_old
+#unset mark_old
 set delete
 unset confirmappend
 set quit
@@ -17,9 +17,11 @@ set beep_new
 set pipe_decode
 set thorough_search
 
-set sidebar_delim = ' | '
-set sidebar_visible = yes
+set sidebar_delim = ' ◂ '
+set sidebar_visible = no
 set sidebar_width = 30
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 
 ignore *
 unignore from: to: cc: date: subject:

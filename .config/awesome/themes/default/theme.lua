@@ -4,7 +4,7 @@
 
 theme = {}
 
-theme.font          = "Liberation Sans 10"
+theme.font          = "Dina 11"
 
 function get_x_color(x)
    command = "xrdb -q | grep color" .. x .. ": | awk '{print $2}'"
