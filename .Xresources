@@ -8,6 +8,8 @@ Xft.rgba: rgb
 Xft.hinting: 1
 Xft.hinstyle: hintfull
 
+Xcursor.theme: cursor-neutral
+
 URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
 URxvt*depth: 32

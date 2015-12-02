@@ -1,28 +1,37 @@
-! vim: ft=xdefaults
-*background: #151515
-*foreground: #F8F8E3
-! black
-*color0: #1C1C1C
-*color8: #404040
-! red
-*color1: #B85335
-*color9: #CF6A4C
-! green
-*color2: #799D6A
-*color10: #99AD6A
-! yellow
-*color3: #FFB964
-*color11: #FAD07A
-! blue
-*color4: #667899
-*color12: #8197BF
-! magenta
-*color5: #8787AF
-*color13: #C6B6EE
-! cyan
-*color6: #668799
-*color14: #8FBFDC
-! white
-*color7: #888888
-*color15: #E8E8D3
+! kantan Xresources template
+*.foreground: #f2f2f2
+*.background: #151515
+*.cursorColor: #b0b0b0
+
+! Black / Grey
+*.color0: #303030
+*.color8: #505050
+
+! Red / Bright Red
+*.color1: #993a3b
+*.color9: #c25e5f
+
+! Green / Bright Green
+*.color2: #82994f
+*.color10: #9bb26a
+
+! Orange / Yellow
+*.color3: #d28445
+*.color11: #f4bf77
+
+! Blue / Bright Blue
+*.color4: #5994ad
+*.color12: #7baabd
+
+! Magenta / Bright Magenta
+*.color5: #a06594
+*.color13: #b485aa
+
+! Cyan / Bright Cyan
+*.color6: #64aca0
+*.color14: #86beb4
+
+! Light Grey / White
+*.color7: #b0b0b0
+*.color15: #d5d5d5
 

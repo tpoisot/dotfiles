@@ -3,7 +3,7 @@ xrdb .Xresources
 xbindkeys
 xset +fp /user/share/fonts/misc
 xset +fp /user/share/fonts/local
-feh --bg-scale ~/.config/wallpaper.png &
+feh --bg-tile ~/.config/wallpaper.png &
 sxhkd &
 urxvt &
 export CONKY_WIDTH=$(grep 'maximum_width' ~/.config/conky/conky.conf | cut -d' ' -f6 | cut -d, -f1)
