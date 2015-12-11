@@ -18,7 +18,7 @@ color search        brightcyan     default
 color indicator     black          cyan
 color index         brightblue     default '~N'
 color index         green          default '~O'
-color index         black          default '~D'
+color index         white          default '~D'
 color index         red            default '~T'
 color index         yellow         default '~F'
 

@@ -1,0 +1,19 @@
+URxvt*background: #000000
+URxvt*foreground: #ffffff
+
+URxvt*color0:color0#141414
+URxvt*color1:   #cf6a4c
+URxvt*color2:   #839061
+URxvt*color3:   #cda869
+URxvt*color4:   #7587a6
+URxvt*color5:   #9b859d
+URxvt*color6:   #05a6b3
+URxvt*color7:   #709080
+
+URxvt*color8:   #cc9393
+URxvt*color9:   #7f9f7f
+URxvt*color10:  #f0dfaf
+URxvt*color11:  #9b859d
+URxvt*color12:  #7587a6
+URxvt*color13:  #0ae6e6
+URxvt*color14:  #ffffff

@@ -159,7 +159,7 @@ noremap <Leader>p :set paste<CR>
 noremap <Leader>P :set paste<CR>
 
 set t_Co=256
-set background=dark
+set background=light
 colorscheme xr
 
 

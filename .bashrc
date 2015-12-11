@@ -35,7 +35,7 @@ alias unmount="umount"            # Because characters are cheap
 alias grep='grep --color=auto'
 
 # PS1 -- ~ >>> 
-export PS1="\[\033[38;5;3m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\] >\[$(tput sgr0)\]\[\033[38;5;7m\]>\[$(tput sgr0)\]\[\033[38;5;8m\]>\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\[\033[38;5;4m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;8m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 export BROWSER="vivaldi"
 
