@@ -14,7 +14,6 @@ URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
 URxvt*depth: 32
 
-*.font: -*-dina-medium-r-*-*-*-100-*-*-*-*-*-*
-*.font: xft:Anonymous Pro Minus:size=11
+*.font: xft:Input:size=10
 
 #include ".schemes/x.xresources"

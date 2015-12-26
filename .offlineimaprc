@@ -19,6 +19,7 @@ remoteuser = YOUR_EMAIL
 remotepass = YOUR_PWD
 remotehost = YOUR_SERVER
 maxconnections = 2
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 [mbnames]
 enabled = yes

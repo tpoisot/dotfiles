@@ -68,6 +68,8 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less']}
 Plug 'skammer/vim-css-color', {'for': ['css', 'less']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 
+Plug 'chrisbra/csv.vim', {'for': ['csv']}
+
 Plug 'elzr/vim-json'
 
 call plug#end()
@@ -159,7 +161,7 @@ noremap <Leader>p :set paste<CR>
 noremap <Leader>P :set paste<CR>
 
 set t_Co=256
-set background=light
+set background=dark
 colorscheme xr
 
 

@@ -47,3 +47,4 @@ eval `dircolors .dircolors`
 function getcolor() {
    xrdb -q | grep "color$1:" | cut -d: -f2 | tr -d '\t'
 }
+export -f getcolor

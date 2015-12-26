@@ -3,14 +3,15 @@
 bspc config border_width        1
 bspc config window_gap          13
 
-bspc config split_ratio         0.52
+bspc config split_ratio         0.55
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
 # Color
-bspc config focused_border_color $(getcolor 11)
-bspc config active_border_color $(getcolor 0)
+bspc config active_border_color $(getcolor 8)
+bspc config normal_border_color $(getcolor 7)
+bspc config focused_border_color $(getcolor 3)
 
 # Mouse gives focus, mouse follows monitor
 bspc config focus_follows_pointer true
