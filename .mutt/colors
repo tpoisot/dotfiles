@@ -3,8 +3,8 @@
 color sidebar_new   brightblue     default
 
 color hdrdefault    white          default
-color header        brightcyan     default "Subject: "
-color header        brightcyan     default "From: "
+color header        brightyellow   default "Subject: "
+color header        brightyellow   default "From: "
 
 color error         red            default
 color message       green          default
@@ -15,10 +15,10 @@ color attachment    brightmagenta  default
 color status        blue           default
 color search        brightcyan     default
 
-color indicator     yellow         black
+color indicator     brightyellow   black
 color index         blue           default '~N'
 color index         blue           default '~O'
 color index         black          default '~D'
 color index         red            default '~T'
-color index         brightmagenta  default '~F'
+color index         brightgreen    default '~F'
 
