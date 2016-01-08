@@ -15,10 +15,13 @@ color attachment    brightmagenta  default
 color status        blue           default
 color search        brightcyan     default
 
-color indicator     brightyellow   black
-color index         blue           default '~N'
-color index         blue           default '~O'
+color index         brightred      default '~N'
+color index         white          default '~R'
+color index         default        default '~O'
 color index         black          default '~D'
-color index         red            default '~T'
-color index         brightgreen    default '~F'
+color index         black          white '~T'
+color index         yellow         default '~F'
+
+set arrow_cursor
+color indicator     brightgreen           default
 
