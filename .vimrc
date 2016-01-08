@@ -72,12 +72,18 @@ Plug 'chrisbra/csv.vim', {'for': ['csv']}
 
 Plug 'elzr/vim-json'
 
+Plug 'kshenoy/vim-signature'
+Plug 'majutsushi/tagbar', {'on': ['TagbarToggle', 'TagbarOpen', 'TagbarClose']}
+
 call plug#end()
 
 " NERDTree
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>m :NERDTreeClose<cr>:NERDTreeFind<CR>
 let NERDTreeIgnore=['\.pyc$', '\.DS_Store']
+
+" Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
 
 map <leader>q {!}fmt -w80<CR>}<CR>
 set formatoptions+=1 " No one-letter word on line end
@@ -184,3 +190,29 @@ let g:limelight_conceal_ctermfg = 240
 let g:limelight_priority = -1
 nnoremap <Leader>g :Goyo<CR>
 
+" Tags
+let g:tagbar_type_r = {
+   \'ctagstype' : 'r',
+   \'kinds' : [
+      \ 'f:Functions',
+      \ 'g:GlobalVariables',
+      \ 'v:FunctionVariables'
+   \]
+\}
+
+let g:tagbar_type_julia = {
+   \'ctagstype' : 'julia',
+   \'kinds' : [
+      \ 'f:Functions',
+      \ 'u:UserFunctions'
+   \]
+\}
+
+let g:tagbar_type_markdown = {
+   \ 'ctagstype' : 'markdown',
+   \ 'kinds' : [
+      \ 'h:Heading_L1',
+      \ 'i:Heading_L2',
+      \ 'k:Heading_L3'
+   \ ]
+\ }
