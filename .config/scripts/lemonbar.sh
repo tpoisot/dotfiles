@@ -1,6 +1,5 @@
 #! /usr/bin/bash
 
-# ./.config/scripts/lemonbar.sh | lemonbar -f "Input:size=11" -o 4 -g x+13
 # TODO get offset and font from xrdb
 
 W() {
@@ -14,7 +13,7 @@ C() {
 }
 
 Clock() {
-   DATE=$(date "+%a %b %d, %T")
+   DATE=$(date "+%d/%m/%y %k:%M")
    echo -n "$DATE"
 }
 

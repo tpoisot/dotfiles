@@ -1,5 +1,5 @@
 ! font
-*.font: xft:Input:size=9
+*.font: xft:Hack:size=9
 
 URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
