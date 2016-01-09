@@ -95,4 +95,4 @@ super + Escape
 #
 
 super + z
-   ~/.config/scripts/hideconky.sh
+   ~/.config/scripts/panel.sh

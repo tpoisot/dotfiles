@@ -50,17 +50,17 @@ set_prompt () {
 
    Reset='\[\e[00m\]'
 
-   FancyX='\342\234\227'
-   Checkmark='\342\234\223'
+   Failure='x'
+   Success='+'
 
    # Add a bright white exit status for the last command
    PS1="$Black["
    # If it was successful, print a green check mark. Otherwise, print
    # a red X.
    if [[ $Last_Command == 0 ]]; then
-   PS1+="$Green$Checkmark"
+   PS1+="$Green$Success"
    else
-   PS1+="$Red$FancyX"
+   PS1+="$Red$Failure"
    fi
    PS1+="$Black]$Reset "
    # If root, just print the host in red. Otherwise, print the current user
@@ -78,7 +78,7 @@ PROMPT_COMMAND='set_prompt'
 
 export BROWSER="vivaldi"
 
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin
+export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 eval `dircolors .dircolors`
 
