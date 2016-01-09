@@ -18,9 +18,9 @@ color search        brightcyan     default
 color index         brightred      default '~N'
 color index         white          default '~R'
 color index         default        default '~O'
-color index         black          default '~D'
-color index         black          white '~T'
 color index         yellow         default '~F'
+color index         black          white   '~T'
+color index         black          default '~D'
 
 set arrow_cursor
 color indicator     brightgreen           default

@@ -35,8 +35,46 @@ alias unmount="umount"            # Because characters are cheap
 alias grep='grep --color=auto'
 
 # PS1 -- ~ >>> 
-export PS1="\[\033[38;5;6m\]\$?\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;13m\]\W\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;11m\]\\$\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
+set_prompt () {
+   Last_Command=$? # Must come first!
+
+   Black='\[\e[01;30m\]'
+   Red='\[\e[01;31m\]'
+   Green='\[\e[01;32m\]'
+   Yellow='\[\e[01;33m\]'
+   Blue='\[\e[01;34m\]'
+   Purple='\[\e[01;35m\]'
+   Cyan='\[\e[01;36m\]'
+   White='\[\e[01;37m\]'
+
+   Reset='\[\e[00m\]'
+
+   FancyX='\342\234\227'
+   Checkmark='\342\234\223'
+
+   # Add a bright white exit status for the last command
+   PS1="$Black["
+   # If it was successful, print a green check mark. Otherwise, print
+   # a red X.
+   if [[ $Last_Command == 0 ]]; then
+   PS1+="$Green$Checkmark"
+   else
+   PS1+="$Red$FancyX"
+   fi
+   PS1+="$Black]$Reset "
+   # If root, just print the host in red. Otherwise, print the current user
+   # and host in green.
+   if [[ $EUID == 0 ]]; then
+   PS1+="$Red\\u "
+   else
+   PS1+="$Purple\\u "
+   fi
+   # Print the working directory and prompt marker in blue, and reset
+   # the text color to the default.
+   PS1+="$Blue\\W $Yellow\\\$$Reset "
+}
+PROMPT_COMMAND='set_prompt'
 
 export BROWSER="vivaldi"
 
