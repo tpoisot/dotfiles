@@ -37,6 +37,9 @@ set sort_aux = reverse-last-date-received
 set uncollapse_jump
 set sort_re
 
+set folder_format = "%f %> %2C %t %N %8s %d"
+set attach_format = "%f -- %d %> [%I] %> %m/%M %> %s %> (%n)"
+
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\]?; *)?(\[[^]]+\] *)?)*"
 
 unset markers
