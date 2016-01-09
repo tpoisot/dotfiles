@@ -11,8 +11,8 @@ I use Arch Linux, so some widgets, paths, etc, may/will need to be adapted.
 I use `bspwm`. The theme will read the colors from `xrdb` through the
 `getcolor` function defined in `.bashrc`.
 
-I use `conky` to get the system infos. The conky window can be toggled with
-super - z.
+I use `lemonbar` to get the system infos. The bar can be toggled with super
+- z.
 
 ## Email
 
