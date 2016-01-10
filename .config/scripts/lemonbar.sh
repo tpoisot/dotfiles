@@ -23,7 +23,7 @@ Clock() {
 }
 
 Sep() {
-   echo -n "$(W)  $(C 7)\\\\$(W)  "
+   echo -n "$(W)  $(C 7)::$(W)  "
 }
 
 Email() {
@@ -65,10 +65,10 @@ Workspace() {
 HDD() {
    # /
    HD="$(W)/"
-   HD="$HD $(C 3)$(df -h / | tail -n 1 | awk '{print $5}')"
+   HD="$HD $(C 2)$(df -h / | tail -n 1 | awk '{print $5}')"
    # /home
    HD="$HD  $(W)~"
-   HD="$HD $(C 3)$(df -h /home | tail -n 1 | awk '{print $5}')"
+   HD="$HD $(C 2)$(df -h /home | tail -n 1 | awk '{print $5}')"
    echo -n "$HD"
 }
 
