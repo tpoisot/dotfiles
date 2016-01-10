@@ -16,9 +16,9 @@ color status        blue           default
 color search        brightcyan     default
 
 color index         brightred      default '~N'
-color index         white          default '~R'
-color index         default        default '~O'
-color index         yellow         default '~F'
+color index         default        default '~R'
+color index         brightgreen    default '~O'
+color index         brightyellow   default '~F'
 color index         black          white   '~T'
 color index         black          default '~D'
 

@@ -19,6 +19,6 @@ then
    killall lemonbar
 else
    bspc config -m $activescreen top_padding 13
-   ~/.config/scripts/lemonbar.sh | lemonbar -f "Hack:size=9" -B"#$background" -F"#$foreground" -o 5 -gx+14 & 
+   ~/.config/scripts/lemonbar.sh | lemonbar -f "Input:size=9" -B"#$background" -F"#$foreground" -o 5 -gx+14 & 
 fi;
 

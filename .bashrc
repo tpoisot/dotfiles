@@ -72,7 +72,7 @@ set_prompt () {
    fi
    # Print the working directory and prompt marker in blue, and reset
    # the text color to the default.
-   PS1+="$Blue\\W $Yellow\\\$$Reset "
+   PS1+="$Cyan\\W $Yellow\\\$$Reset "
 }
 PROMPT_COMMAND='set_prompt'
 
