@@ -43,14 +43,14 @@ alias grep='grep --color=auto'
 set_prompt () {
    Last_Command=$? # Must come first!
 
-   Black='\[\e[01;30m\]'
-   Red='\[\e[01;31m\]'
-   Green='\[\e[01;32m\]'
-   Yellow='\[\e[01;33m\]'
-   Blue='\[\e[01;34m\]'
-   Purple='\[\e[01;35m\]'
-   Cyan='\[\e[01;36m\]'
-   White='\[\e[01;37m\]'
+   Black='\[\e[00;30m\]'
+   Red='\[\e[00;31m\]'
+   Green='\[\e[00;32m\]'
+   Yellow='\[\e[00;33m\]'
+   Blue='\[\e[00;34m\]'
+   Purple='\[\e[00;35m\]'
+   Cyan='\[\e[00;36m\]'
+   White='\[\e[00;37m\]'
 
    Reset='\[\e[00m\]'
 
