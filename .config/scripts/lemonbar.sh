@@ -23,24 +23,24 @@ Clock() {
 }
 
 Sep() {
-   echo -n "$(W)  $(C 7)-$(W)  "
+   echo -n "$(W)  $(C 7)\\\\$(W)  "
 }
 
 Email() {
    ALL=$(find ~/.mail/INBOX/cur -type f | wc -l | tr -d '\n')
    NEW=$(find ~/.mail/INBOX/new -type f | wc -l | tr -d '\n')
    DFT=$(find ~/.mail/Drafts/ -type f | wc -l | tr -d '\n')
-   echo -n "$(C 3)$ALL$(W) inbox  $(C 4)$NEW$(W) new  $(C 6)$DFT$(W) drafts"
+   echo -n "$(C 3)$ALL$(W) I  $(C 4)$NEW$(W) N  $(C 6)$DFT$(W) D"
 }
 
 Wifi() {
    SSID=$(iwgetid -r)
-   echo -n "$(W)SSID $(C 1)$SSID$(W)"
+   echo -n "$(W)W $(C 1)$SSID$(W)"
 }
 
 Battery() {
    BAT=$(acpi --battery | cut -d, -f2)
-   echo -n "$(W)Batt. $(C 5)$BAT$(W)"
+   echo -n "$(W)P$(C 5)$BAT$(W)"
 }
 
 Workspace() {
@@ -62,7 +62,17 @@ Workspace() {
    echo -n "%{r}$WLIST  "
 }
 
+HDD() {
+   # /
+   HD="$(W)/"
+   HD="$HD $(C 3)$(df -h / | tail -n 1 | awk '{print $5}')"
+   # /home
+   HD="$HD  $(W)~"
+   HD="$HD $(C 3)$(df -h /home | tail -n 1 | awk '{print $5}')"
+   echo -n "$HD"
+}
+
 while true; do
-   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Workspace)"
+   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Sep)$(HDD)$(Workspace)"
    sleep 1;
 done

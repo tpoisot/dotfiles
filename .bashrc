@@ -58,7 +58,7 @@ set_prompt () {
    Success='+'
 
    # Add a bright white exit status for the last command
-   PS1="$Black["
+   PS1="$Black("
    # If it was successful, print a green check mark. Otherwise, print
    # a red X.
    if [[ $Last_Command == 0 ]]; then
@@ -66,7 +66,7 @@ set_prompt () {
    else
    PS1+="$Red$Failure"
    fi
-   PS1+="$Black]$Reset "
+   PS1+="$Black)$Reset "
    # If root, just print the host in red. Otherwise, print the current user
    # and host in green.
    if [[ $EUID == 0 ]]; then
