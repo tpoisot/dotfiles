@@ -4,12 +4,17 @@
 
 W() {
    FG=$(xrdb -q | grep fore | cut -d: -f2 | tr -d '\t')
-   echo -n "%{F$FG}"
+   echo -n "%{F$FG}%{U-}"
 }
 
 C() {
    COL=$(getcolor $1)
    echo -n "%{F$COL}"
+}
+
+U() {
+   COL=$(getcolor $1)
+   echo -n "%{U$COL+u}"
 }
 
 Clock() {
@@ -40,15 +45,19 @@ Battery() {
 
 Workspace() {
    WSI=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
-   WLIST="  "
-   for workspace in 0 1 2 3 4
+   WLIST=""
+   #for workspace in 0 1 2 3 4
+   for e in $(bspc control --get-status | cut -d':' -f2-6 | tr ':' '\n')
    do
-      if test $WSI = $workspace
-      then
-         WLIST="$WLIST$(C 2)$(expr $workspace + 1)$(W) "
-      else
-         WLIST="$WLIST$(C 15)$(expr $workspace + 1)$(W) "
-      fi;
+      if [ "${e:0:1}" == "O" ]; then
+         WLIST="$WLIST $(C 4)$(U 8)$(expr ${e:1:2} + 1)$(W)"
+      elif [ "${e:0:1}" == "F" ]; then
+         WLIST="$WLIST $(C 4)$(expr ${e:1:2} + 1)$(W)"
+      elif [ "${e:0:1}" == "f" ]; then
+         WLIST="$WLIST $(C 15)$(expr ${e:1:2} + 1)$(W)"
+      elif [ "${e:0:1}" == "o" ]; then
+         WLIST="$WLIST $(U 8)$(C 15)$(expr ${e:1:2} + 1)$(W)"
+      fi
    done
    echo -n "%{r}$WLIST  "
 }
