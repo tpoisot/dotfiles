@@ -2,6 +2,7 @@
 
 lemonbarrunning=`pidof lemonbar | wc -w`
 connectedscreens=`xrandr | grep " HDMI2" | wc -l`
+xftfont=`xrdb -q | grep faceName | sed 's/*.faceName://g' | tr -d '\t' | sed 's/xft://g'`
 
 if test $connectedscreens = 1
 then
@@ -19,6 +20,6 @@ then
    killall lemonbar
 else
    bspc config -m $activescreen top_padding 13
-   ~/.config/scripts/lemonbar.sh | lemonbar -f "Input:size=9" -B"#$background" -F"#$foreground" -o 5 -gx+14 & 
+   ~/.config/scripts/lemonbar.sh | lemonbar -f "$xftfont" -B"#$background" -F"#$foreground" -o 5 -gx+14 & 
 fi;
 

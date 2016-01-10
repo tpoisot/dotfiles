@@ -1,5 +1,6 @@
 ! font
-*.font: xft:Input:size=9
+!*.font: xft:Fira Mono:size=9
+*.faceName: xft:Hack:size=9
 
 URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
@@ -17,5 +18,6 @@ Xcursor.theme: cursor-neutral
 ! xterm config
 XTerm*termname: xterm-256color
 XTerm*locale: true
+XTerm*highlightSelection: true
 
 #include ".schemes/x.xresources"

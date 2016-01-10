@@ -11,7 +11,11 @@ alias lsh='ls -lh'                # list sizes
 alias lsa='lsh -A'                # and hidden files
 
 # Various utilities
-alias xr="xrdb ~/.Xresources"     # Reload X resources
+#alias xr="xrdb ~/.Xresources"     # Reload X resources
+xr() {
+   xrdb ~/.Xresources
+   xsetroot -solid "#$(xrdb -q | grep background | cut -d# -f2)"
+}
 
 # Move around
 alias ..="cd .."

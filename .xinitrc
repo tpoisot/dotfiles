@@ -5,5 +5,5 @@ xset +fp /user/share/fonts/misc
 xset +fp /user/share/fonts/local
 xsetroot -solid "#$(xrdb -q | grep background | cut -d# -f2)" &
 sxhkd &
-urxvt &
+xterm &
 exec bspwm

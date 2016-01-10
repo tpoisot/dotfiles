@@ -18,7 +18,7 @@ Clock() {
 }
 
 Sep() {
-   echo -n "$(W)  $(C 8)-$(W)  "
+   echo -n "$(W)  $(C 7)-$(W)  "
 }
 
 Email() {
@@ -47,7 +47,7 @@ Workspace() {
       then
          WLIST="$WLIST$(C 2)$(expr $workspace + 1)$(W) "
       else
-         WLIST="$WLIST$(C 8)$(expr $workspace + 1)$(W) "
+         WLIST="$WLIST$(C 15)$(expr $workspace + 1)$(W) "
       fi;
    done
    echo -n "%{r}$WLIST  "
