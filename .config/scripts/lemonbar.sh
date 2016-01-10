@@ -50,9 +50,9 @@ Workspace() {
    for e in $(bspc control --get-status | cut -d':' -f2-6 | tr ':' '\n')
    do
       if [ "${e:0:1}" == "O" ]; then
-         WLIST="$WLIST $(C 4)$(U 8)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 2)$(U 8)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "F" ]; then
-         WLIST="$WLIST $(C 4)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 2)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "f" ]; then
          WLIST="$WLIST $(C 15)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "o" ]; then

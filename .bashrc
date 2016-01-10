@@ -91,3 +91,6 @@ function getcolor() {
    xrdb -q | grep "color$1:" | cut -d: -f2 | tr -d '\t'
 }
 export -f getcolor
+
+# dmenu
+#alias dmenu_run='dmenu_run -nb "#$(xrdb -q | grep background | cut -d# -f2)" -nf "$(getcolor 0)" -sb "#04fe31"'
