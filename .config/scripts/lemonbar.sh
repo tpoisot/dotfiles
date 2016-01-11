@@ -50,13 +50,13 @@ Workspace() {
    for e in $(bspc control --get-status | cut -d':' -f2-6 | tr ':' '\n')
    do
       if [ "${e:0:1}" == "O" ]; then
-         WLIST="$WLIST $(C 2)$(U 8)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 2)$(U 10)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "F" ]; then
          WLIST="$WLIST $(C 2)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "f" ]; then
          WLIST="$WLIST $(C 15)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "o" ]; then
-         WLIST="$WLIST $(U 8)$(C 15)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(U 10)$(C 15)$(expr ${e:1:2} + 1)$(W)"
       fi
    done
    echo -n "%{r}$WLIST  "
@@ -72,7 +72,31 @@ HDD() {
    echo -n "$HD"
 }
 
+Sound() {
+   SND="$(W)V "
+   SSTAT=$(amixer get Master | tail -n 1 | awk '{print $6}' | tr -d '\n' | tr -d '[]')
+   SVOL=$(amixer get Master | tail -n 1 | awk '{print $4}' | tr -d '\n' | tr -d '[]')
+   if test $SSTAT = "on"
+   then
+      SND="$SND$(C 4)$SVOL"
+   else
+      SND="$SND$(C 7)$SVOL"
+   fi
+   MSTAT=$(amixer get Mic | tail -n 1 | awk '{print $7}' | tr -d '\n' | tr -d '[]')
+   MVOL=$(amixer get Mic | tail -n 1 | awk '{print $5}' | tr -d '\n' | tr -d '[]')
+   if test $MSTAT = "on"
+   then
+      SND="$SND  $(W)M $(C 4)$MVOL"
+   else
+      SND="$SND  $(W)M $(C 7)$MVOL"
+   fi
+   echo -n "$SND"
+}
+
+# Spotify
+# dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'
+
 while true; do
-   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Sep)$(HDD)$(Workspace)"
+   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Sep)$(HDD)$(Sep)$(Sound)$(Workspace)"
    sleep 1;
 done
