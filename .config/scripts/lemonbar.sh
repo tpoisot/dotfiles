@@ -93,10 +93,26 @@ Sound() {
    echo -n "$SND"
 }
 
-# Spotify
-# dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'
+Spotify () {
+   isrunning=`pidof spotify | wc -l`
+   if test $isrunning = 1
+   then
+      status=`dbus-send --print-reply --session --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'`
+      ispaused=$(echo "$status" | grep "mpris:length" -a1 | tail -n1 | cut -d\t -f3 | cut -d' ' -f2)
+      if test $ispaused = 0
+      then
+         echo "$(C 7)No spotify song"
+      else
+         artist=$(echo "$status" | grep "xesam:artist" -b2 | tail -n 1 | cut -d'"' -f2)
+         title=$(echo "$status" | grep "xesam:title" -b1 | tail -n 1 | cut -d'"' -f2)
+         echo "$(C 6)$title $(C 7)- $(C 8)$artist"
+      fi
+   else
+      echo "$(C 7)Spotify closed"
+   fi
+}
 
 while true; do
-   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Sep)$(HDD)$(Sep)$(Sound)$(Workspace)"
+   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Sep)$(HDD)$(Sep)$(Sound)$(Sep)$(Spotify)$(Workspace)"
    sleep 1;
 done
