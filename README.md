@@ -14,7 +14,7 @@ I use `bspwm`. The theme will read the colors from `xrdb` through the
 
 I use `lemonbar` to get the system infos. The bar can be toggled with
 super-z. It shows *very* minimal informations: date, time, emails, wireless
-ssid, power, and status of some disks.
+ssid, power, status of some disks, volume and mic status, and spotify status.
 
 ## Email
 
