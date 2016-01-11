@@ -82,6 +82,20 @@ call plug#end()
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>m :NERDTreeClose<cr>:NERDTreeFind<CR>
 let NERDTreeIgnore=['\.pyc$', '\.DS_Store']
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+" NERDTree git markers
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "x",
+    \ "Staged"    : "+",
+    \ "Untracked" : "~",
+    \ "Renamed"   : ">",
+    \ "Unmerged"  : "=",
+    \ "Deleted"   : "-",
+    \ "Dirty"     : "X",
+    \ "Clean"     : "O",
+    \ "Unknown"   : "?"
+    \ }
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
