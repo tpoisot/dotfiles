@@ -69,9 +69,13 @@ Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less']}
 Plug 'skammer/vim-css-color', {'for': ['css', 'less']}
 Plug 'groenewege/vim-less', {'for': ['less']}
 
+Plug 'wakatime/vim-wakatime'
+
 Plug 'chrisbra/csv.vim', {'for': ['csv']}
 
 Plug 'elzr/vim-json'
+
+Plug 'yuratomo/w3m.vim'
 
 Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar', {'on': ['TagbarToggle', 'TagbarOpen', 'TagbarClose']}

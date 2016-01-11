@@ -20,6 +20,6 @@ then
    killall lemonbar
 else
    bspc config -m $activescreen top_padding 13
-   ~/.config/scripts/lemonbar.sh | lemonbar -f "$xftfont" -B"#$background" -F"#$foreground" -gx20+14 -o3 -u1 & 
+   ~/.config/scripts/lemonbar.sh | lemonbar -f "$xftfont" -B"#$background" -F"#$foreground" -g1910x20+14 -o3 -u1 & 
 fi;
 
