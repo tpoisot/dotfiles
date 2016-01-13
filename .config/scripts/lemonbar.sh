@@ -59,7 +59,7 @@ Workspace() {
          WLIST="$WLIST $(U 10)$(C 15)$(expr ${e:1:2} + 1)$(W)"
       fi
    done
-   echo -n "%{r}$WLIST  "
+   echo -n "$WLIST"
 }
 
 HDD() {
@@ -101,11 +101,11 @@ Spotify () {
       ispaused=$(echo "$status" | grep "mpris:length" -a1 | tail -n1 | cut -d\t -f3 | cut -d' ' -f2)
       if test $ispaused = 0
       then
-         echo "$(C 7)No spotify song"
+         echo "$(C 7)Not playing"
       else
          artist=$(echo "$status" | grep "xesam:artist" -b2 | tail -n 1 | cut -d'"' -f2)
          title=$(echo "$status" | grep "xesam:title" -b1 | tail -n 1 | cut -d'"' -f2)
-         echo "$(C 6)$title $(C 7)- $(C 8)$artist"
+         echo "$(C 7)Playing $(C 6)$title $(C 7)by $(C 8)$artist"
       fi
    else
       echo "$(C 7)Spotify closed"
@@ -113,6 +113,22 @@ Spotify () {
 }
 
 while true; do
-   echo "$(W)$(Clock)$(Sep)$(Email)$(Sep)$(Wifi)$(Sep)$(Battery)$(Sep)$(HDD)$(Sep)$(Sound)$(Sep)$(Spotify)$(Workspace)"
+   # Clock, emails
+   status="$(W)$(Clock)$(Sep)$(Email)"
+   # Wifi
+   if test $(iwgetid -r | wc -l) = 1
+   then
+      status="$status$(Sep)$(Wifi)"
+   fi
+   # Batteru, HDD, Volume
+   status="$status$(Sep)$(Battery)$(Sep)$(HDD)$(Sep)$(Sound)"
+   # Spotify
+   if test $(pidof spotify | wc -l) = 1
+   then
+      status="$status$(Sep)$(Spotify)"
+   fi
+   # Workspace indicator
+   status="$status%{r}$(Workspace)"
+   echo "$status"
    sleep 1;
 done

@@ -5,6 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# This is not the 1970s anymore, so ^S ans ^Q can go ^F themselves
+if [ -t 0 ];
+then
+   stty sane
+   stty stop ''
+   stty start ''
+   stty werase ''
+fi
+
 # Various ls aliases
 alias ls='ls --color=auto -F'     # use color
 alias lsh='ls -lh'                # list sizes
