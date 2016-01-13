@@ -1,6 +1,7 @@
 #! /usr/bin/bash
 
 # TODO get offset and font from xrdb
+# TODO do the above in panel.sh
 
 W() {
    FG=$(xrdb -q | grep fore | cut -d: -f2 | tr -d '\t')
@@ -39,8 +40,16 @@ Wifi() {
 }
 
 Battery() {
-   BAT=$(acpi --battery | cut -d, -f2)
-   echo -n "$(W)P$(C 5)$BAT$(W)"
+   POW=$(acpi --battery | cut -d, -f2)
+   # Status
+   status=$(acpi --battery | cut -d' ' -f3 | sed 's/,//')
+   message=""
+   if test $status = "Discharging"
+   then
+      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
+   fi
+   # TODO add other cases (charging, charged)
+   echo -n "$(W)P$(C 5)$POW$message$(W)"
 }
 
 Workspace() {
@@ -126,6 +135,11 @@ while true; do
    if test $(pidof spotify | wc -l) = 1
    then
       status="$status$(Sep)$(Spotify)"
+   fi
+   # Caps lock
+   if test $(xset q | grep Caps | cut -d: -f3 | cut -d' ' -f4) = "on"
+   then
+      status="$status$(Sep)$(C 1)CAPS"
    fi
    # Workspace indicator
    status="$status%{r}$(Workspace)"
