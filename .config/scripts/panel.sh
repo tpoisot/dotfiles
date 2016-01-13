@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# TODO get offset and font from xrdb
+
 lemonbarrunning=`pidof lemonbar | wc -w`
 connectedscreens=`xrandr | grep " HDMI2" | wc -l`
 xftfont=`xrdb -q | grep faceName | sed 's/*.faceName://g' | tr -d '\t' | sed 's/xft://g'`

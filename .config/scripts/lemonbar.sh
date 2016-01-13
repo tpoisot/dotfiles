@@ -1,8 +1,5 @@
 #! /usr/bin/bash
 
-# TODO get offset and font from xrdb
-# TODO do the above in panel.sh
-
 W() {
    FG=$(xrdb -q | grep fore | cut -d: -f2 | tr -d '\t')
    echo -n "%{F$FG}%{U-}"
@@ -24,7 +21,7 @@ Clock() {
 }
 
 Sep() {
-   echo -n "$(W)  $(C 7)::$(W)  "
+   echo -n "$(W) $(C 7)::$(W) "
 }
 
 Email() {
