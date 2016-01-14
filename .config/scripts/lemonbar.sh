@@ -45,7 +45,11 @@ Battery() {
    then
       message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
    fi
-   # TODO add other cases (charging, charged)
+   if test $status = "Charging"
+   then
+      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
+   fi
+   # TODO add charged
    echo -n "$(W)P$(C 5)$POW$message$(W)"
 }
 
@@ -60,7 +64,7 @@ Workspace() {
       elif [ "${e:0:1}" == "F" ]; then
          WLIST="$WLIST $(C 2)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "f" ]; then
-         WLIST="$WLIST $(C 15)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 7)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "o" ]; then
          WLIST="$WLIST $(U 10)$(C 15)$(expr ${e:1:2} + 1)$(W)"
       fi

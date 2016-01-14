@@ -79,9 +79,27 @@ set_prompt () {
    # If root, just print the host in red. Otherwise, print the current user
    # and host in green.
    if [[ $EUID == 0 ]]; then
-   PS1+="$Red\\u "
+   PS1+="$Red ROOT "
    else
-   PS1+="$Purple\\u "
+      git_status=$(LANG=en_US git status 2> /dev/null)
+      on_branch="On branch ([^${IFS}]*)"
+      on_commit="HEAD detached at ([^${IFS}]*)"
+      if [[ ! $git_status =~ "working directory clean" ]]; then
+         color="$Blue"
+      elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+         color="$Red"
+      elif [[ $git_status =~ "nothing to commit" ]]; then
+         color="$Green"
+      else
+         color="$Black"
+      fi
+      if [[ $git_status =~ $on_branch ]]; then
+         branch=${BASH_REMATCH[1]}
+         PS1+="$Reset[$color$branch$Reset] "
+      elif [[ $git_status =~ $on_commit ]]; then
+         commit=${BASH_REMATCH[1]}
+         PS1+="$Reset[$color$commit]$Reset "
+      fi
    fi
    # Print the working directory and prompt marker in blue, and reset
    # the text color to the default.
