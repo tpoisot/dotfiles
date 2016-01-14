@@ -85,9 +85,9 @@ set_prompt () {
       on_branch="On branch ([^${IFS}]*)"
       on_commit="HEAD detached at ([^${IFS}]*)"
       if [[ ! $git_status =~ "working directory clean" ]]; then
-         color="$Blue"
-      elif [[ $git_status =~ "Your branch is ahead of" ]]; then
          color="$Red"
+      elif [[ $git_status =~ "Your branch is ahead of" ]]; then
+         color="$Blue"
       elif [[ $git_status =~ "nothing to commit" ]]; then
          color="$Green"
       else
