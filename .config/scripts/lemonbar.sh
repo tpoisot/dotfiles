@@ -17,11 +17,11 @@ U() {
 
 Clock() {
    DATE=$(date "+%d/%m/%y %k:%M")
-   echo -n "$DATE"
+   echo -n "$(C 8)$DATE"
 }
 
 Sep() {
-   echo -n "$(W) $(C 7)::$(W) "
+   echo -n "$(W) $(C 7)-$(W) "
 }
 
 Email() {
@@ -43,11 +43,11 @@ Battery() {
    message=""
    if test $status = "Discharging"
    then
-      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
+      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
    fi
    if test $status = "Charging"
    then
-      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
+      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
    fi
    # TODO add charged
    echo -n "$(W)P$(C 5)$POW$message$(W)"
@@ -111,14 +111,14 @@ Spotify () {
       ispaused=$(echo "$status" | grep "mpris:length" -a1 | tail -n1 | cut -d\t -f3 | cut -d' ' -f2)
       if test $ispaused = 0
       then
-         echo "$(C 7)Not playing"
+         echo "$(C 8)Not playing"
       else
          artist=$(echo "$status" | grep "xesam:artist" -b2 | tail -n 1 | cut -d'"' -f2)
          title=$(echo "$status" | grep "xesam:title" -b1 | tail -n 1 | cut -d'"' -f2)
-         echo "$(C 7)Playing $(C 6)$title $(C 7)by $(C 8)$artist"
+         echo "$(C 6)$title $(C 8)< $(C 14)$artist"
       fi
    else
-      echo "$(C 7)Spotify closed"
+      echo "$(C 8)Spotify closed"
    fi
 }
 

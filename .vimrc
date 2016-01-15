@@ -199,8 +199,7 @@ let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'r', 'julia', 'json', '
 let g:pandoc#syntax#conceal#cchar_overrides = {
    \"atx": "§",
    \"codelang": ">",
-   \"newline": "¶",
-   \"image": "█"}
+   \"newline": "¶"}
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
 
