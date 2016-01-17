@@ -19,7 +19,7 @@ color index         magenta        default '~N'
 color index         default        default '~R'
 color index         green          default '~O'
 color index         yellow         default '~F'
-color index         red            default '~T'
+color index         blue           default '~T'
 color index         white          default '~D'
 
 set arrow_cursor

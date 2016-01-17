@@ -202,6 +202,7 @@ let g:pandoc#syntax#conceal#cchar_overrides = {
    \"newline": "¶"}
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
+let g:licenses_copyright_holders_name = 'Poisot, Timothée <tim@poisotlab.io>'
 
 let g:goyo_width = 82
 autocmd! User GoyoEnter Limelight
