@@ -22,6 +22,5 @@ color index         yellow         default '~F'
 color index         blue           default '~T'
 color index         white          default '~D'
 
-set arrow_cursor
-color indicator     brightgreen           default
-
+# set arrow_cursor
+color indicator     default        white

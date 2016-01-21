@@ -80,6 +80,8 @@ Plug 'yuratomo/w3m.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar', {'on': ['TagbarToggle', 'TagbarOpen', 'TagbarClose']}
 
+Plug 'rhysd/vim-clang-format', {'for': ['c']}
+
 call plug#end()
 
 " NERDTree
@@ -145,13 +147,16 @@ nnoremap z6 :set foldlevel=5<cr>
 set autoindent
 set copyindent
 set cindent
-set softtabstop=3
-set tabstop=3
-set shiftwidth=3
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
 set shiftround " Indent by multiple of tab length
 set expandtab
 set smarttab
+
+" Matching brackets
 set showmatch
+set mat=5 " show for .5 sec
 
 " Development notes
 if has("autocmd")
@@ -164,6 +169,8 @@ endif
 " Highlight search
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 " But remove highlights with space
 nnoremap <Leader><Space> :noh<CR>
 
@@ -179,6 +186,15 @@ vnoremap <C-k> :m-2<CR>gv=gv
 
 " Scroll with space bar
 nnoremap <Space> <C-F>
+
+
+" s skips whitespace and puts cursor on next non-whitespace char
+map s :call search('\S','ceW')<cr>
+" S skips preceding whitespace and puts cursor on last non-whitespace char
+map S :call search('\S','bceW')<cr>
+
+" toggle spelling
+map <Leader>s :set invspell<cr>
 
 " System clipboard
 set clipboard=unnamed
