@@ -89,7 +89,7 @@ nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>m :NERDTreeClose<cr>:NERDTreeFind<CR>
 let g:NERDTreeIgnore=['\.pyc$', '\.DS_Store']
 "let g:NERDTreeDirArrowExpandable = '>'
-"let g:NERDTreeDirArrowCollapsible = '> '
+"let g:NERDTreeDirArrowCollapsible = 'v'
 " NERDTree git markers
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "x",

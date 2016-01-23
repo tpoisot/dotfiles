@@ -67,7 +67,7 @@ set_prompt () {
    Success='+'
 
    # Add a bright white exit status for the last command
-   PS1="$Black("
+   PS1="$Black["
    # If it was successful, print a green check mark. Otherwise, print
    # a red X.
    if [[ $Last_Command == 0 ]]; then
@@ -75,7 +75,7 @@ set_prompt () {
    else
    PS1+="$Red$Failure"
    fi
-   PS1+="$Black)$Reset "
+   PS1+="$Black]$Reset "
    # If root, just print the host in red. Otherwise, print the current user
    # and host in green.
    if [[ $EUID == 0 ]]; then
@@ -86,24 +86,28 @@ set_prompt () {
       on_commit="HEAD detached at ([^${IFS}]*)"
       if [[ ! $git_status =~ "working directory clean" ]]; then
          color="$Red"
+         message="modified"
       elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-         color="$Blue"
+         color="$Purple"
+         message="unpushed"
       elif [[ $git_status =~ "nothing to commit" ]]; then
          color="$Green"
+         message="clean"
       else
          color="$Black"
+         message="what?"
       fi
       if [[ $git_status =~ $on_branch ]]; then
          branch=${BASH_REMATCH[1]}
-         PS1+="$Reset[$color$branch$Reset] "
+         PS1+="$Reset[$White$branch$Reset::$color$message$Reset] "
       elif [[ $git_status =~ $on_commit ]]; then
          commit=${BASH_REMATCH[1]}
-         PS1+="$Reset[$color$commit]$Reset "
+         PS1+="$Reset[$White$commit$Reset::$color$message]$Reset "
       fi
    fi
    # Print the working directory and prompt marker in blue, and reset
    # the text color to the default.
-   PS1+="$Cyan\\W $Yellow\\\$$Reset "
+   PS1+="[$Blue\\W$Reset] $Yellow\\\$$Reset "
 }
 PROMPT_COMMAND='set_prompt'
 
