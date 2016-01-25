@@ -81,6 +81,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar', {'on': ['TagbarToggle', 'TagbarOpen', 'TagbarClose']}
 
 Plug 'rhysd/vim-clang-format', {'for': ['c']}
+Plug 'mrtazz/DoxygenToolkit.vim', {'for': ['c']}
 
 call plug#end()
 
@@ -253,3 +254,7 @@ let g:tagbar_type_markdown = {
       \ 'k:Heading_L3'
    \ ]
 \ }
+
+
+" Doxygen
+let g:DoxygenToolkit_authorName="Timothée Poisot"

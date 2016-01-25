@@ -86,10 +86,10 @@ set_prompt () {
       on_commit="HEAD detached at ([^${IFS}]*)"
       if [[ ! $git_status =~ "working directory clean" ]]; then
          color="$Red"
-         message="modified"
+         message="dirty"
       elif [[ $git_status =~ "Your branch is ahead of" ]]; then
          color="$Purple"
-         message="unpushed"
+         message="staged"
       elif [[ $git_status =~ "nothing to commit" ]]; then
          color="$Green"
          message="clean"
@@ -97,17 +97,18 @@ set_prompt () {
          color="$Black"
          message="what?"
       fi
+      PS1+="[$Blue\\W$Reset"
       if [[ $git_status =~ $on_branch ]]; then
          branch=${BASH_REMATCH[1]}
-         PS1+="$Reset[$White$branch$Reset::$color$message$Reset] "
+         PS1+="$White on $Cyan$branch$White is $color$message$Reset"
       elif [[ $git_status =~ $on_commit ]]; then
          commit=${BASH_REMATCH[1]}
-         PS1+="$Reset[$White$commit$Reset::$color$message]$Reset "
+         PS1+="$White on $Cyan$commit$White is $color$message$Reset"
       fi
    fi
    # Print the working directory and prompt marker in blue, and reset
    # the text color to the default.
-   PS1+="[$Blue\\W$Reset] $Yellow\\\$$Reset "
+   PS1+="] $Yellow\\\$$Reset "
 }
 PROMPT_COMMAND='set_prompt'
 

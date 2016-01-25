@@ -1,5 +1,5 @@
 !font
-*.faceName: xft:Hack:size=10
+*.faceName: xft:Hack:size=9
 
 URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
