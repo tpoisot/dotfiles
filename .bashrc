@@ -63,11 +63,11 @@ set_prompt () {
 
    Reset='\[\e[00m\]'
 
-   Failure='x'
-   Success='+'
+   Failure='#'
+   Success='#'
 
    # Add a bright white exit status for the last command
-   PS1="$Black["
+   PS1=""
    # If it was successful, print a green check mark. Otherwise, print
    # a red X.
    if [[ $Last_Command == 0 ]]; then
@@ -75,7 +75,7 @@ set_prompt () {
    else
    PS1+="$Red$Failure"
    fi
-   PS1+="$Black]$Reset "
+   PS1+="$Reset"
    # If root, just print the host in red. Otherwise, print the current user
    # and host in green.
    if [[ $EUID == 0 ]]; then
@@ -97,7 +97,7 @@ set_prompt () {
          color="$Black"
          message="what?"
       fi
-      PS1+="[$Blue\\W$Reset"
+      PS1+=" $Blue\\W$Reset"
       if [[ $git_status =~ $on_branch ]]; then
          branch=${BASH_REMATCH[1]}
          PS1+="$White on $Cyan$branch$White is $color$message$Reset"
@@ -108,7 +108,7 @@ set_prompt () {
    fi
    # Print the working directory and prompt marker in blue, and reset
    # the text color to the default.
-   PS1+="] $Yellow\\\$$Reset "
+   PS1+=" $Yellow\\\$$Reset "
 }
 PROMPT_COMMAND='set_prompt'
 
