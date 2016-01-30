@@ -17,11 +17,11 @@ U() {
 
 Clock() {
    DATE=$(date "+%d/%m/%y %k:%M")
-   echo -n "$(C 8)$DATE"
+   echo -n "$(C 7)$DATE"
 }
 
 Sep() {
-   echo -n "$(W) $(C 7)-$(W) "
+   echo -n "$(W) $(C 8):::$(W) "
 }
 
 Email() {
@@ -43,13 +43,12 @@ Battery() {
    message=""
    if test $status = "Discharging"
    then
-      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
+      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
    fi
    if test $status = "Charging"
    then
-      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
+      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
    fi
-   # TODO add charged
    echo -n "$(W)P$(C 5)$POW$message$(W)"
 }
 

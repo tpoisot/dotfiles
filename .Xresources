@@ -1,5 +1,5 @@
 !font
-*.faceName: xft:Hack:size=9
+*.faceName: xft:Hack:size=9:antialias=false
 
 URxvt*.cursorBlink: 1
 URxvt.scrollBar: false
@@ -11,9 +11,6 @@ Xft.autohint: 0
 Xft.rgba: rgb
 Xft.hinting: 1
 Xft.hinstyle: hintfull
-
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size: 22
 
 ! xterm config
 XTerm*termname: xterm-256color

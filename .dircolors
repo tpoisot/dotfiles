@@ -69,6 +69,8 @@ EXEC 1;31
 *.pyc 37
 *.cov 37
 *.vrb 37
+*.fls 37
+*.fdb_latexmk 37
 
 # FOSS typical files
 *LICENSE 3;36

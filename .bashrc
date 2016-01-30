@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# This is not the 1970s anymore, so ^S ans ^Q can go ^F themselves
+# This is not the 1970s anymore, so ^S and ^Q can go ^F themselves
 if [ -t 0 ];
 then
    stty sane
@@ -91,9 +91,10 @@ set_prompt () {
       git_status=$(LANG=en_US git status 2> /dev/null)
       on_branch="On branch ([^${IFS}]*)"
       on_commit="HEAD detached at ([^${IFS}]*)"
+      on_commit="HEAD detached at ([^${IFS}]*)"
       if [[ ! $git_status =~ "working directory clean" ]]; then
          color="$BoldRed"
-         message="dirty"
+         message="changed"
       elif [[ $git_status =~ "Your branch is ahead of" ]]; then
          color="$BoldPurple"
          message="staged"

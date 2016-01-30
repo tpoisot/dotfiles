@@ -31,7 +31,6 @@ inoremap <C-f> <C-x><C-f>
 
 set wildmenu
 set wildmode=list:longest
-
 set ignorecase
 set smartcase
 set ruler
@@ -83,14 +82,16 @@ Plug 'majutsushi/tagbar', {'on': ['TagbarToggle', 'TagbarOpen', 'TagbarClose']}
 Plug 'rhysd/vim-clang-format', {'for': ['c']}
 Plug 'mrtazz/DoxygenToolkit.vim', {'for': ['c']}
 
+Plug 'gi1242/vim-tex-syntax'
+
 call plug#end()
 
 " NERDTree
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>m :NERDTreeClose<cr>:NERDTreeFind<CR>
 let g:NERDTreeIgnore=['\.pyc$', '\.DS_Store']
-"let g:NERDTreeDirArrowExpandable = '>'
-"let g:NERDTreeDirArrowCollapsible = 'v'
+"let g:NERDTreeDirArrowExpandable = '»'
+"let g:NERDTreeDirArrowCollapsible = '«'
 " NERDTree git markers
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "x",
@@ -195,7 +196,7 @@ map s :call search('\S','ceW')<cr>
 map S :call search('\S','bceW')<cr>
 
 " toggle spelling
-map <Leader>s :set invspell<cr>
+map <Leader>S :set invspell<cr>
 
 " System clipboard
 set clipboard=unnamed
@@ -214,9 +215,10 @@ let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh']
 let g:pandoc#syntax#conceal#cchar_overrides = {
-   \"atx": "§",
-   \"codelang": ">",
-   \"newline": "¶"}
+    \"atx": "§",
+    \"codelang": "»",
+    \"image": "◆",
+    \"newline": "¶"}
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
 let g:licenses_copyright_holders_name = 'Poisot, Timothée <tim@poisotlab.io>'
@@ -258,3 +260,11 @@ let g:tagbar_type_markdown = {
 
 " Doxygen
 let g:DoxygenToolkit_authorName="Timothée Poisot"
+
+" Latex things
+nmap <Leader>C :w<CR>:silent !latexmk -quiet -pv "%"; latexmk -c "%"<CR><CR>:redraw!<CR>
+nmap <Leader>c :w<CR>:silent !latexmk -quiet "%"; latexmk -c "%"<CR><CR>:redraw!<CR>
+let g:tex_fold_envs="frame"
+
+" Build
+nmap <Leader>b :w<CR>:silent !make<CR><CR>:redraw!<CR>

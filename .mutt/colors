@@ -18,7 +18,7 @@ color search        brightcyan     default
 color index         magenta        default '~N'
 color index         default        default '~R'
 color index         green          default '~O'
-color index         yellow         default '~F'
+color index         red            default '~F'
 color index         blue           default '~T'
 color index         white          default '~D'
 
