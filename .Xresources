@@ -1,20 +1,20 @@
 !font
-*.faceName: xft:Hack:size=9:antialias=false
+*.faceName                       : xft:Hack:size=8:antialias=false
 
-URxvt*.cursorBlink: 1
-URxvt.scrollBar: false
-URxvt*depth: 32
+URxvt*.cursorBlink               : 1
+URxvt.scrollBar                  : false
+URxvt*depth                      : 32
 
-Xft.lcdfilter: lcddefault
-Xft.antialias: 1
-Xft.autohint: 0
-Xft.rgba: rgb
-Xft.hinting: 1
-Xft.hinstyle: hintfull
+Xft.lcdfilter                    : lcddefault
+Xft.antialias                    : 1
+Xft.autohint                     : 0
+Xft.rgba                         : rgb
+Xft.hinting                      : 1
+Xft.hinstyle                     : hintfull
 
 ! xterm config
-XTerm*termname: xterm-256color
-XTerm*locale: true
-XTerm*highlightSelection: true
+XTerm*termname                   : xterm-256color
+XTerm*locale                     : true
+XTerm*highlightSelection         : true
 
 #include ".schemes/x.xresources"

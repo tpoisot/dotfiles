@@ -52,26 +52,26 @@ alias grep='grep --color=auto'
 set_prompt () {
    Last_Command=$? # Must come first!
 
-   Black='\[\e[00;30m\]'
-   Red='\[\e[00;31m\]'
-   Green='\[\e[00;32m\]'
-   Yellow='\[\e[00;33m\]'
-   Blue='\[\e[00;34m\]'
-   Purple='\[\e[00;35m\]'
-   Cyan='\[\e[00;36m\]'
-   White='\[\e[00;37m\]'
+    Black='\[\e[00;30m\]'
+    Red='\[\e[00;31m\]'
+    Green='\[\e[00;32m\]'
+    Yellow='\[\e[00;33m\]'
+    Blue='\[\e[00;34m\]'
+    Purple='\[\e[00;35m\]'
+    Cyan='\[\e[00;36m\]'
+    White='\[\e[00;37m\]'
 
-   BoldRed='\[\e[01;31m\]'
-   BoldGreen='\[\e[01;32m\]'
-   BoldYellow='\[\e[01;33m\]'
-   BoldBlue='\[\e[01;34m\]'
-   BoldPurple='\[\e[01;35m\]'
-   BoldCyan='\[\e[01;36m\]'
+    BoldRed='\[\e[01;31m\]'
+    BoldGreen='\[\e[01;32m\]'
+    BoldYellow='\[\e[01;33m\]'
+    BoldBlue='\[\e[01;34m\]'
+    BoldPurple='\[\e[01;35m\]'
+    BoldCyan='\[\e[01;36m\]'
 
-   Reset='\[\e[00m\]'
+    Reset='\[\e[00m\]'
 
-   Failure='>'
-   Success='>'
+   Failure='•'
+   Success='•'
 
    # Add a bright white exit status for the last command
    PS1=""
@@ -93,25 +93,25 @@ set_prompt () {
       on_commit="HEAD detached at ([^${IFS}]*)"
       on_commit="HEAD detached at ([^${IFS}]*)"
       if [[ ! $git_status =~ "working directory clean" ]]; then
-         color="$BoldRed"
+         color="$Red"
          message="changed"
       elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-         color="$BoldPurple"
+         color="$Purple"
          message="staged"
       elif [[ $git_status =~ "nothing to commit" ]]; then
-         color="$BoldGreen"
+         color="$Green"
          message="clean"
       else
          color="$Black"
          message="what?"
       fi
-      PS1+=" $BoldBlue\\W$Reset"
+      PS1+=" $Blue\\W$Reset"
       if [[ $git_status =~ $on_branch ]]; then
          branch=${BASH_REMATCH[1]}
-         PS1+="$White on $BoldCyan$branch$White is $color$message$Reset"
+         PS1+="$White on $Cyan$branch$White is $color$message$Reset"
       elif [[ $git_status =~ $on_commit ]]; then
          commit=${BASH_REMATCH[1]}
-         PS1+="$White on $BoldCyan$commit$White is $color$message$Reset"
+         PS1+="$White on $Cyan$commit$White is $color$message$Reset"
       fi
    fi
    # Print the working directory and prompt marker in blue, and reset

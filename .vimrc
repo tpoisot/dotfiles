@@ -38,10 +38,13 @@ set backspace=indent,eol,start
 
 call plug#begin("~/.vim/plugged")
 
-Plug 'tpoisot/xr.vim'
+" Use tpoisot/xr.vim for github version
+Plug '~/code/packages/vim/xr.vim'
 
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+
+Plug 'vim-scripts/Align'
 
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeClose', 'NERDTreeOpen']}
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -268,3 +271,12 @@ let g:tex_fold_envs="frame"
 
 " Build
 nmap <Leader>b :w<CR>:silent !make<CR><CR>:redraw!<CR>
+
+" Get syntax group
+nmap <leader>z :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

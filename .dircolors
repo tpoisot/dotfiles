@@ -11,23 +11,23 @@ EXEC 1;31
 *rakefile 1;35
 
 # Interpreted
-*.r 33
-*.R 33
-*.jl 33
-*.py 33
+*.r    33
+*.R    33
+*.jl   33
+*.py   33
 
 # Text
-*.md 32
-*.mkd 32
-*.tex 32
+*.md    32
+*.mkd   32
+*.tex   32
 
 # PDF and images
-*.pdf 1;32
-*.png 34
-*.jpg 34
-*.jpeg 34
-*.gif 34
-*.tiff 34
+*.pdf    1;32
+*.png    34
+*.jpg    34
+*.jpeg   34
+*.gif    34
+*.tiff   34
 
 # Data files
 *.json 35
@@ -39,14 +39,14 @@ EXEC 1;31
 *.dat 35
 
 # Excel, word, and co
-*.doc 1;4;40;36
-*.odt 1;4;40;36
-*.ods 1;4;40;36
-*.docx 1;4;40;36
-*.xls 1;4;40;36
-*.xlsx 1;4;40;36
-*.ppt 1;4;40;36
-*.pptx 1;4;40;36
+*.doc    1;4;40;36
+*.odt    1;4;40;36
+*.ods    1;4;40;36
+*.docx   1;4;40;36
+*.xls    1;4;40;36
+*.xlsx   1;4;40;36
+*.ppt    1;4;40;36
+*.pptx   1;4;40;36
 
 # Compiled languages
 *.c 36
@@ -73,11 +73,11 @@ EXEC 1;31
 *.fdb_latexmk 37
 
 # FOSS typical files
-*LICENSE 3;36
-*CONTRIBUTING 3;36
-*REQUIRE 3;36
-*README 3;36
-*LICENSE.md 3;36
-*REQUIRE 3;36
-*README.md 3;36
-*CONTRIBUTING.md 3;36
+*LICENSE           3;36
+*CONTRIBUTING      3;36
+*REQUIRE           3;36
+*README            3;36
+*LICENSE.md        3;36
+*REQUIRE           3;36
+*README.md         3;36
+*CONTRIBUTING.md   3;36
