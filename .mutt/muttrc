@@ -17,7 +17,7 @@ set beep_new
 set pipe_decode
 set thorough_search
 
-set sidebar_delim = ' ◂ '
+set sidebar_delim = ' ┃ '
 set sidebar_visible = no
 set sidebar_width = 30
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'

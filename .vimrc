@@ -44,8 +44,6 @@ Plug '~/code/packages/vim/xr.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
-Plug 'vim-scripts/Align'
-
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeClose', 'NERDTreeOpen']}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -64,6 +62,9 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc-after'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-criticmarkup'
+
+Plug 'vim-scripts/Align'
+Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'antoyo/vim-licenses'
 
@@ -216,12 +217,16 @@ let g:julia_highlight_operators = 1
 
 let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
-let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh']
+let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh', 'c']
 let g:pandoc#syntax#conceal#cchar_overrides = {
     \"atx": "§",
     \"codelang": "»",
     \"image": "◆",
     \"newline": "¶"}
+
+" Table mode
+let g:table_mode_corner="|"
+let g:table_mode_align_char=":"
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'
 let g:licenses_copyright_holders_name = 'Poisot, Timothée <tim@poisotlab.io>'

@@ -70,8 +70,8 @@ set_prompt () {
 
     Reset='\[\e[00m\]'
 
-   Failure='•'
-   Success='•'
+   Failure='▶'
+   Success='▶'
 
    # Add a bright white exit status for the last command
    PS1=""

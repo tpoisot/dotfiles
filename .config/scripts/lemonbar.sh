@@ -17,11 +17,11 @@ U() {
 
 Clock() {
    DATE=$(date "+%d/%m/%y %k:%M")
-   echo -n "$(C 7)$DATE"
+   echo -n "$(C 8)$DATE"
 }
 
 Sep() {
-   echo -n "$(W) $(C 8):::$(W) "
+   echo -n "$(W) $(C 7):::$(W) "
 }
 
 Email() {
@@ -43,11 +43,11 @@ Battery() {
    message=""
    if test $status = "Discharging"
    then
-      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
+      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
    fi
    if test $status = "Charging"
    then
-      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
+      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
    fi
    echo -n "$(W)P$(C 5)$POW$message$(W)"
 }
@@ -140,6 +140,11 @@ while true; do
    if test $(xset q | grep Caps | cut -d: -f3 | cut -d' ' -f4) = "on"
    then
       status="$status$(Sep)$(C 1)CAPS"
+   fi
+   # Backup running
+   if test $(ps aux | grep "python2 /usr/bin/duplicity" | grep -v grep | head -n 1 | wc -l) = 1
+   then
+      status="$status$(Sep)$(C 3)BACKING UP"
    fi
    # Workspace indicator
    status="$status%{r}$(Workspace)"

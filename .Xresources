@@ -1,5 +1,5 @@
 !font
-*.faceName                       : xft:Hack:size=8:antialias=false
+*.faceName                       : xft:Iosevka:size=10:antialias=false
 
 URxvt*.cursorBlink               : 1
 URxvt.scrollBar                  : false
