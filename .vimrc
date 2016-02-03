@@ -77,6 +77,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'chrisbra/csv.vim', {'for': ['csv']}
 
 Plug 'elzr/vim-json'
+Plug 'cespare/vim-toml'
 
 Plug 'yuratomo/w3m.vim'
 
@@ -84,6 +85,8 @@ Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar', {'on': ['TagbarToggle', 'TagbarOpen', 'TagbarClose']}
 
 Plug 'rhysd/vim-clang-format', {'for': ['c']}
+Plug 'justmao945/vim-clang', {'for': ['c']}
+"Plug 'bbchung/clighter', {'for': ['c']}
 Plug 'mrtazz/DoxygenToolkit.vim', {'for': ['c']}
 
 Plug 'gi1242/vim-tex-syntax'
@@ -225,7 +228,9 @@ let g:pandoc#syntax#conceal#cchar_overrides = {
     \"newline": "¶"}
 
 " Table mode
+let g:table_mode_separator="|"
 let g:table_mode_corner="|"
+let g:table_mode_corner_corner="|"
 let g:table_mode_align_char=":"
 
 let g:licenses_authors_name = 'Poisot, Timothée <tim@poisotlab.io>'

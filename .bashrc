@@ -134,3 +134,9 @@ export -f getcolor
 
 # dmenu
 #alias dmenu_run='dmenu_run -nb "#$(xrdb -q | grep background | cut -d# -f2)" -nf "$(getcolor 0)" -sb "#04fe31"'
+
+# Julia
+JULIA_INPUT_COLOR=blue
+JULIA_ANSWER_COLOR=normal
+export JULIA_ANSWER_COLOR
+export JULIA_INPUT_COLOR
