@@ -1,3 +1,4 @@
+eval $(ssh-agent)
 setxkbmap ca
 xrdb .Xresources
 xbindkeys

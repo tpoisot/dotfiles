@@ -20,7 +20,7 @@ color index         default        default '~R'
 color index         green          default '~O'
 color index         red            default '~F'
 color index         blue           default '~T'
-color index         white          default '~D'
+color index         black          default '~D'
 
 # set arrow_cursor
-color indicator     default        white
+color indicator     default        black

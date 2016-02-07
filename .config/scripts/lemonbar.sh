@@ -16,40 +16,41 @@ U() {
 }
 
 Clock() {
-   DATE=$(date "+%d/%m/%y %k:%M")
-   echo -n "$(C 8)$DATE"
+   DATE=$(date "+%d/%m/%y")
+   HOUR=$(date "+%k:%M")
+   echo -e "$(W)\uf133 $(C 7)$DATE $(W)\uf017$(C 7) $HOUR"
 }
 
 Sep() {
-   echo -n "$(W) $(C 7):::$(W) "
+   echo -n "$(W)  $(C 8)▎$(W) "
 }
 
 Email() {
    ALL=$(find ~/.mail/INBOX/cur -type f | wc -l | tr -d '\n')
    NEW=$(find ~/.mail/INBOX/new -type f | wc -l | tr -d '\n')
    DFT=$(find ~/.mail/Drafts/ -type f | wc -l | tr -d '\n')
-   echo -n "$(C 3)$ALL$(W) I  $(C 4)$NEW$(W) N  $(C 6)$DFT$(W) D"
+   echo -e "\uf003 $(C 3)$ALL $(W)\uf0e0 $(C 4)$NEW$(W) \uf0f6 $(C 6)$DFT$(W)"
 }
 
 Wifi() {
    SSID=$(iwgetid -r)
-   echo -n "$(W)W $(C 1)$SSID$(W)"
+   echo -e "\uf1eb $(C 1)$SSID$(W)"
 }
 
 Battery() {
-   POW=$(acpi --battery | cut -d, -f2)
+   POW=$(acpi --battery | cut -d, -f2 | cut -d% -f1)
    # Status
    status=$(acpi --battery | cut -d' ' -f3 | sed 's/,//')
    message=""
    if test $status = "Discharging"
    then
-      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
+      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
    fi
    if test $status = "Charging"
    then
-      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
+      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
    fi
-   echo -n "$(W)P$(C 5)$POW$message$(W)"
+   echo -e "\uf240$(C 5)$POW%$message$(W)"
 }
 
 Workspace() {
@@ -78,28 +79,28 @@ HDD() {
    # /home
    HD="$HD  $(W)~"
    HD="$HD $(C 2)$(df -h /home | tail -n 1 | awk '{print $5}')"
-   echo -n "$HD"
+   echo -e "\uf0a0 $HD"
 }
 
 Sound() {
-   SND="$(W)V "
+   SND="\uf028 "
    SSTAT=$(amixer get Master | tail -n 1 | awk '{print $6}' | tr -d '\n' | tr -d '[]')
    SVOL=$(amixer get Master | tail -n 1 | awk '{print $4}' | tr -d '\n' | tr -d '[]')
    if test $SSTAT = "on"
    then
       SND="$SND$(C 4)$SVOL"
    else
-      SND="$SND$(C 7)$SVOL"
+      SND="$SND$(C 8)$SVOL"
    fi
    MSTAT=$(amixer get Mic | tail -n 1 | awk '{print $7}' | tr -d '\n' | tr -d '[]')
    MVOL=$(amixer get Mic | tail -n 1 | awk '{print $5}' | tr -d '\n' | tr -d '[]')
    if test $MSTAT = "on"
    then
-      SND="$SND  $(W)M $(C 4)$MVOL"
+       SND="$SND  $(W)\uf130 $(C 4)$MVOL"
    else
-      SND="$SND  $(W)M $(C 7)$MVOL"
+       SND="$SND  $(W)\uf130 $(C 8)$MVOL"
    fi
-   echo -n "$SND"
+   echo -e "$SND"
 }
 
 Spotify () {
@@ -110,14 +111,14 @@ Spotify () {
       ispaused=$(echo "$status" | grep "mpris:length" -a1 | tail -n1 | cut -d\t -f3 | cut -d' ' -f2)
       if test $ispaused = 0
       then
-         echo "$(C 8)Not playing"
+         echo -e "\uf1bc $(C 8)not playing"
       else
          artist=$(echo "$status" | grep "xesam:artist" -b2 | tail -n 1 | cut -d'"' -f2)
          title=$(echo "$status" | grep "xesam:title" -b1 | tail -n 1 | cut -d'"' -f2)
-         echo "$(C 6)$title $(C 8)< $(C 14)$artist"
+         echo -e "\uf1bc $(C 6)$title $(C 8)by $(C 14)$artist"
       fi
    else
-      echo "$(C 8)Spotify closed"
+      echo -e "\uf1bc $(C 8)closed"
    fi
 }
 
@@ -129,7 +130,7 @@ while true; do
    then
       status="$status$(Sep)$(Wifi)"
    fi
-   # Batteru, HDD, Volume
+   # Battery, HDD, Volume
    status="$status$(Sep)$(Battery)$(Sep)$(HDD)$(Sep)$(Sound)"
    # Spotify
    if test $(pidof spotify | wc -l) = 1
