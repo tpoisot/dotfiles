@@ -6,6 +6,7 @@ lemonbarrunning=`pidof lemonbar | wc -w`
 connectedscreens=`xrandr | grep " HDMI2" | wc -l`
 xftfont=`xrdb -q | grep faceName | sed 's/*.faceName://g' | tr -d '\t' | sed 's/xft://g'`
 
+# Bold fonts, just because
 #xftfont=$xftfont":style=Bold"
 
 if test $connectedscreens = 1
@@ -26,10 +27,12 @@ fi
 
 if test $lemonbarrunning = 1
 then
+   bspc config -m $activescreen bottom_padding 0
    bspc config -m $activescreen top_padding 0
    killall lemonbar
 else
-   bspc config -m $activescreen top_padding 13
-   ~/.config/scripts/lemonbar.sh | lemonbar -f "$xftfont" -B"#$background" -F"#$foreground" -g1889x17+14+6 -u1 -f FontAwesome-10.5 & 
+   bspc config -m $activescreen bottom_padding 17
+   bspc config -m $activescreen top_padding 0
+   ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1889x17+17+8 -u1 -f "$xftfont" -f FontAwesome-11 -o 0 -b & 
 fi;
 

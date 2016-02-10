@@ -18,11 +18,11 @@ U() {
 Clock() {
    DATE=$(date "+%d/%m/%y")
    HOUR=$(date "+%k:%M")
-   echo -e "$(W)\uf133 $(C 7)$DATE $(W)\uf017$(C 7) $HOUR"
+   echo -e "$(W)\uf133 $(C 8)$DATE $(W)\uf017$(C 8) $HOUR"
 }
 
 Sep() {
-   echo -n "$(W)  $(C 8)▎$(W) "
+   echo -e "$(W)     $(W) "
 }
 
 Email() {
@@ -44,11 +44,11 @@ Battery() {
    message=""
    if test $status = "Discharging"
    then
-      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
+      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m left"
    fi
    if test $status = "Charging"
    then
-      message=" $(C 7)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
+      message=" $(C 8)$(acpi --battery | cut -d' ' -f5 | cut -d: -f1-2 | sed 's/:/h/')m to go"
    fi
    echo -e "\uf240$(C 5)$POW%$message$(W)"
 }
@@ -60,13 +60,13 @@ Workspace() {
    for e in $(bspc control --get-status | cut -d':' -f2-6 | tr ':' '\n')
    do
       if [ "${e:0:1}" == "O" ]; then
-         WLIST="$WLIST $(C 2)$(U 10)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 4)$(U 8)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "F" ]; then
-         WLIST="$WLIST $(C 2)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 4)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "f" ]; then
-         WLIST="$WLIST $(C 7)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(C 8)$(expr ${e:1:2} + 1)$(W)"
       elif [ "${e:0:1}" == "o" ]; then
-         WLIST="$WLIST $(U 10)$(C 15)$(expr ${e:1:2} + 1)$(W)"
+         WLIST="$WLIST $(U 8)$(C 8)$(expr ${e:1:2} + 1)$(W)"
       fi
    done
    echo -n "$WLIST"
@@ -140,15 +140,15 @@ while true; do
    # Caps lock
    if test $(xset q | grep Caps | cut -d: -f3 | cut -d' ' -f4) = "on"
    then
-      status="$status$(Sep)$(C 1)CAPS"
+      status="$status$(Sep) \uf023 $(C 1)Caps locked"
    fi
    # Backup running
    if test $(ps aux | grep "python2 /usr/bin/duplicity" | grep -v grep | head -n 1 | wc -l) = 1
    then
-      status="$status$(Sep)$(C 3)BACKING UP"
+      status="$status$(Sep)\uf1c0 $(C 3)Backing up"
    fi
    # Workspace indicator
    status="$status%{r}$(Workspace)"
-   echo "$status"
+   echo -e "$status"
    sleep 1;
 done

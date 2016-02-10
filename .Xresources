@@ -1,5 +1,5 @@
 !font
-*.faceName                       : xft:Iosevka:size=10:antialias=false
+*.faceName                       : xft:DejaVu Sans Mono:size=9
 
 URxvt*.cursorBlink               : 1
 URxvt.scrollBar                  : false
@@ -17,4 +17,4 @@ XTerm*termname                   : xterm-256color
 XTerm*locale                     : true
 XTerm*highlightSelection         : true
 
-#include ".schemes/x.xresources"
+#include ".schemes/light.xresources"
