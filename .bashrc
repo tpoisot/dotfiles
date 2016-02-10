@@ -50,7 +50,7 @@ alias grep='grep --color=auto'
 # PS1 -- ~ >>> 
 
 set_prompt () {
-   Last_Command=$? # Must come first!
+    Last_Command=$? # Must come first!
 
     Black='\[\e[00;30m\]'
     Red='\[\e[00;31m\]'
@@ -70,53 +70,75 @@ set_prompt () {
 
     Reset='\[\e[00m\]'
 
-   Failure='▶'
-   Success='▶'
+    Failure='▶'
+    Success='▶'
 
-   # Add a bright white exit status for the last command
-   PS1=""
-   # If it was successful, print a green check mark. Otherwise, print
-   # a red X.
-   if [[ $Last_Command == 0 ]]; then
-   PS1+="$BoldGreen$Success"
-   else
-   PS1+="$BoldRed$Failure"
-   fi
-   PS1+="$Reset"
-   # If root, just print the host in red. Otherwise, print the current user
-   # and host in green.
-   if [[ $EUID == 0 ]]; then
-   PS1+="$Red ROOT "
-   else
-      git_status=$(LANG=en_US git status 2> /dev/null)
-      on_branch="On branch ([^${IFS}]*)"
-      on_commit="HEAD detached at ([^${IFS}]*)"
-      on_commit="HEAD detached at ([^${IFS}]*)"
-      if [[ ! $git_status =~ "working directory clean" ]]; then
-         color="$Red"
-         message="changed"
-      elif [[ $git_status =~ "Your branch is ahead of" ]]; then
-         color="$Purple"
-         message="staged"
-      elif [[ $git_status =~ "nothing to commit" ]]; then
-         color="$Green"
-         message="clean"
-      else
-         color="$Black"
-         message="what?"
-      fi
-      PS1+=" $Blue\\W$Reset"
-      if [[ $git_status =~ $on_branch ]]; then
-         branch=${BASH_REMATCH[1]}
-         PS1+="$White on $Cyan$branch$White is $color$message$Reset"
-      elif [[ $git_status =~ $on_commit ]]; then
-         commit=${BASH_REMATCH[1]}
-         PS1+="$White on $Cyan$commit$White is $color$message$Reset"
-      fi
-   fi
-   # Print the working directory and prompt marker in blue, and reset
-   # the text color to the default.
-   PS1+=" $Yellow\\\$$Reset "
+    # Add a bright white exit status for the last command
+    PS1=""
+    # If it was successful, print a green check mark. Otherwise, print
+    # a red X.
+    if [[ $Last_Command == 0 ]]; then
+        PS1+="$BoldGreen$Success"
+    else
+        PS1+="$BoldRed$Failure"
+    fi
+    PS1+="$Reset"
+    # If root, just print the host in red. Otherwise, print the current user
+    # and host in green.
+    if [[ $EUID == 0 ]]; then
+        PS1+="$Red ROOT "
+    else
+        git_status=$(LANG=en_US git status 2> /dev/null)
+        on_branch="On branch ([^${IFS}]*)"
+        on_commit="HEAD detached at ([^${IFS}]*)"
+        git_message=""
+        have_added=0
+        if [[ $git_status =~ "nothing to commit" ]]; then
+            color="$Green"
+            message="!"
+            git_message+="$color$message"
+            have_added=1
+        fi
+        if [[ $git_status =~ "not staged for commit" ]]; then
+            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            have_added=1
+            color="$Red"
+            message="~"
+            git_message+="$color$message"
+        fi
+        if [[ $git_status =~ "Untracked" ]]; then
+            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            have_added=1
+            color="$Yellow"
+            message="?"
+            git_message+="$color$message"
+        fi
+        if [[ $git_status =~ "to be committed" ]]; then
+            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            have_added=1
+            color="$Cyan"
+            message="+"
+            git_message+="$color$message"
+        fi
+        if [[ $git_status =~ "Your branch is ahead of" ]]; then
+            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            have_added=1
+            color="$Purple"
+            message=">"
+            git_message+="$color$message"
+        fi
+        PS1+=" $Blue\\W$Reset"
+        if [[ $git_status =~ $on_branch ]]; then
+            branch=${BASH_REMATCH[1]}
+            PS1+="$White::$Cyan$branch $Black{$git_message$Black}$Reset"
+        elif [[ $git_status =~ $on_commit ]]; then
+            commit=${BASH_REMATCH[1]}
+            PS1+="$White::$Cyan$commit$Black{$git_message$Black}$Reset"
+        fi
+    fi
+    # Print the working directory and prompt marker in blue, and reset
+    # the text color to the default.
+    PS1+=" $Yellow: $Reset"
 }
 PROMPT_COMMAND='set_prompt'
 
