@@ -120,7 +120,7 @@ set formatoptions+=1 " No one-letter word on line end
 
 nnoremap <leader>i :set list!<cr> " Invisibles
 
-" User normal regexp
+" Use normal regexp
 nnoremap / /\v
 vnoremap / /\v
 

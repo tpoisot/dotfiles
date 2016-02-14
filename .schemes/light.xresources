@@ -1,37 +1,27 @@
-! special
-*.foreground:   #4d4d4c
-*.background:   #fefefe
-*.cursorColor:  #adadac
-
+! PaperColor Theme
+*.foreground: #4D4D4C
+*.background: #EFF0F1
 ! black
-*.color0:       #6d6d6c
-*.color8:       #9d9d9c
-
+*.color0: #5d5d5c
+*.color8: #7d7d7c
 ! red
-*.color1:       #c82829
-*.color9:       #e35555
-
+*.color1: #D7005F
+*.color9: #D7005F
 ! green
-*.color2:       #718c00
-*.color10:      #86a019
-
-! yellow
-*.color3:       #f5871f
-*.color11:      #feb673
-
+*.color2: #718C00
+*.color10: #718C00
+! yellow / orange
+*.color3: #D75F00
+*.color11: #D75F00
 ! blue
-*.color4:       #4271ae
-*.color12:      #628bc0
-
+*.color4: #46b1e9
+*.color12: #4271AE
 ! magenta
-*.color5:       #8959a8
-*.color13:      #a67fbf
-
+*.color5: #8959A8
+*.color13: #8959A8
 ! cyan
-*.color6:       #3e999f
-*.color14:      #5db4b9
-
+*.color6: #3E999F
+*.color14: #3E999F
 ! white
-*.color7:       #cecece
-*.color15:      #eeeeee
-
+*.color7: #BEBEBE
+*.color15: #DEDEDE

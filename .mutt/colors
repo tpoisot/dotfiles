@@ -19,8 +19,8 @@ color index         magenta        default '~N'
 color index         default        default '~R'
 color index         green          default '~O'
 color index         red            default '~F'
-color index         blue           default '~T'
+color index         cyan           default '~T'
 color index         white          default '~D'
 
 # set arrow_cursor
-color indicator     default        white
+color indicator     blue       white

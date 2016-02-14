@@ -2,17 +2,21 @@
 
 W() {
    FG=$(xrdb -q | grep fore | cut -d: -f2 | tr -d '\t')
-   echo -n "%{F$FG}%{U-}"
+   #echo -n "%{F$FG}%{U-}"
+   echo -n "%{F#BBBBBB}%{U-}"
 }
 
 C() {
    COL=$(getcolor $1)
-   echo -n "%{F$COL}"
+   # NOTE This effectively removes everything
+   #echo -n "%{F$COL}"
+   echo -n "%{F#FFFFFF}"
 }
 
 U() {
    COL=$(getcolor $1)
-   echo -n "%{U$COL+u}"
+   #echo -n "%{U$COL+u}"
+   echo -n "%{U#FFFFFF+u}"
 }
 
 Clock() {
@@ -22,7 +26,7 @@ Clock() {
 }
 
 Sep() {
-   echo -e "$(W)     $(W) "
+    echo -e "$(W)            $(W) "
 }
 
 Email() {
@@ -83,22 +87,25 @@ HDD() {
 }
 
 Sound() {
-   SND="\uf028 "
    SSTAT=$(amixer get Master | tail -n 1 | awk '{print $6}' | tr -d '\n' | tr -d '[]')
    SVOL=$(amixer get Master | tail -n 1 | awk '{print $4}' | tr -d '\n' | tr -d '[]')
    if test $SSTAT = "on"
    then
+      SND="\uf028 "
       SND="$SND$(C 4)$SVOL"
    else
+      SND="\uf026 "
       SND="$SND$(C 8)$SVOL"
    fi
    MSTAT=$(amixer get Mic | tail -n 1 | awk '{print $7}' | tr -d '\n' | tr -d '[]')
    MVOL=$(amixer get Mic | tail -n 1 | awk '{print $5}' | tr -d '\n' | tr -d '[]')
    if test $MSTAT = "on"
    then
-       SND="$SND  $(W)\uf130 $(C 4)$MVOL"
+       MIC="\uf130"
+       SND="$SND  $(W)$MIC $(C 4)$MVOL"
    else
-       SND="$SND  $(W)\uf130 $(C 8)$MVOL"
+       MIC="\uf131"
+       SND="$SND  $(W)$MIC $(C 8)$MVOL"
    fi
    echo -e "$SND"
 }

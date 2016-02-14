@@ -1,0 +1,39 @@
+[options]
+font            = Camingo Code 10
+
+[colors]
+
+background = rgba(254, 254, 254, 0.95)
+foreground = rgb(30, 30, 30)
+cursor = rgb(161, 161, 161)
+
+color0 = rgb(80, 80, 80)
+color8 = rgb(100, 100, 100)
+
+# red
+color1  = #b44244
+color9  = #c25e5f
+
+# green
+color2  = #54822b
+color10 = #66913f
+
+# yellow
+color3  = #e7752e
+color11 = #f49d67
+
+# blue
+color4  = #2c6d9c
+color12 = #5b8caf
+
+# magenta
+color5  = #824071
+color13 = #96688a
+
+# cyan
+color6  = #308782
+color14 = #4f9c98
+
+
+color7 = rgb(202, 202, 202)
+color15 = rgb(222, 222, 222)
