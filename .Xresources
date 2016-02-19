@@ -1,5 +1,5 @@
 !font
-!*.faceName                       : xft:Noto sans UI:size=9
+*.faceName                       : xft:Camingo Code:size=9
 
 URxvt*.cursorBlink               : 1
 URxvt.scrollBar                  : false

@@ -71,6 +71,7 @@ Plug 'antoyo/vim-licenses'
 Plug 'hail2u/vim-css3-syntax', {'for': ['css', 'less']}
 Plug 'skammer/vim-css-color', {'for': ['css', 'less']}
 Plug 'groenewege/vim-less', {'for': ['less']}
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 Plug 'wakatime/vim-wakatime'
 

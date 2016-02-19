@@ -37,6 +37,7 @@ EXEC 1;31
 *.csv 35
 *.tsv 35
 *.dat 35
+*.jld 35
 
 # Excel, word, and co
 *.doc    1;4;40;36

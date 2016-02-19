@@ -9,7 +9,7 @@ set mbox_type = Maildir
 set timeout = 3
 set mail_check = 0
 unset move
-#unset mark_old
+unset mark_old
 set delete
 unset confirmappend
 set quit
@@ -32,13 +32,14 @@ hdr_order from: to: cc: date: subject:
 
 set status_chars = " *%A"
 set sort = threads
+set collapse_unread
 set sort_aux = reverse-last-date-received
 set uncollapse_jump
 set sort_re
 
 set status_format  = "―――[%f]――[%r%m messages%?n? (%n new) ?%?d? (%d to delete)?%?t? (%t tagged)?]――%>―%?p?(%p postponed)?――"
 set date_format =  "%d/%m %R"
-set index_format = "[%Z] %D   %-20.20F    %s %> (%e/%E)"
+set index_format = "%?M?+& ?%2M  %-20.20F       %s %> %D %Z "
 set folder_format = "%f %> %2C %t %N %8s %d"
 set attach_format = "%f -- %d %> [%I] %> %m/%M %> %s %> (%n)"
 

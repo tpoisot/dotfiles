@@ -1,9 +1,9 @@
 [options]
-font            = Camingo Code 10
+font            = Iosevka 10
 
 [colors]
 
-background = rgba(254, 254, 254, 0.95)
+background = rgb(253, 253, 253)
 foreground = rgb(30, 30, 30)
 cursor = rgb(161, 161, 161)
 
@@ -35,5 +35,5 @@ color6  = #308782
 color14 = #4f9c98
 
 
-color7 = rgb(202, 202, 202)
-color15 = rgb(222, 222, 222)
+color7 = rgb(212, 212, 212)
+color15 = rgb(232, 232, 232)

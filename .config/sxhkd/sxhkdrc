@@ -84,7 +84,7 @@ super + Return
 	termite
 
 super + space
-	dmenu_run
+	lighthouse | sh
 
 # make sxhkd reload its configuration files:
 super + Escape

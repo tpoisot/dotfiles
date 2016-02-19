@@ -24,6 +24,7 @@ alias lsa='lsh -A'                # and hidden files
 xr() {
    xrdb ~/.Xresources
    xsetroot -solid "#$(xrdb -q | grep background | cut -d# -f2)"
+   feh --bg-fill --no-xinerama ~/.config/wallpaper.png 
 }
 
 # Move around
