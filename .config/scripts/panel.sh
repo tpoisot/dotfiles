@@ -33,6 +33,6 @@ then
 else
    bspc config -m $activescreen bottom_padding 17
    bspc config -m $activescreen top_padding 0
-   ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1889x17+17+7 -u1 -f Iosevka-9 -f FontAwesome-11 -o 0 -b -d & 
+   ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1889x17+17+7 -u1 -f PragmataPro-9 -f FontAwesome-11 -o 0 -b -d & 
 fi;
 

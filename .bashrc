@@ -53,42 +53,65 @@ alias grep='grep --color=auto'
 set_prompt () {
     Last_Command=$? # Must come first!
 
-    Black='\[\e[00;30m\]'
-    Red='\[\e[00;31m\]'
-    Green='\[\e[00;32m\]'
-    Yellow='\[\e[00;33m\]'
-    Blue='\[\e[00;34m\]'
-    Purple='\[\e[00;35m\]'
-    Cyan='\[\e[00;36m\]'
-    White='\[\e[00;37m\]'
+    Black='\[\e[30m\]'
+    Red='\[\e[31m\]'
+    Green='\[\e[32m\]'
+    Yellow='\[\e[33m\]'
+    Blue='\[\e[34m\]'
+    Purple='\[\e[35m\]'
+    Cyan='\[\e[36m\]'
+    White='\[\e[37m\]'
 
-    BoldRed='\[\e[01;31m\]'
-    BoldGreen='\[\e[01;32m\]'
-    BoldYellow='\[\e[01;33m\]'
-    BoldBlue='\[\e[01;34m\]'
-    BoldPurple='\[\e[01;35m\]'
-    BoldCyan='\[\e[01;36m\]'
+    LightBlack='\[\e[90m\]'
+    LightRed='\[\e[91m\]'
+    LightGreen='\[\e[92m\]'
+    LightYellow='\[\e[93m\]'
+    LightBlue='\[\e[94m\]'
+    LightPurple='\[\e[95m\]'
+    LightCyan='\[\e[96m\]'
+    LightWhite='\[\e[97m\]'
+    
+    OnBlack='\[\e[40m\]'
+    OnRed='\[\e[41m\]'
+    OnGreen='\[\e[42m\]'
+    OnYellow='\[\e[43m\]'
+    OnBlue='\[\e[44m\]'
+    OnPurple='\[\e[45m\]'
+    OnCyan='\[\e[46m\]'
+    OnWhite='\[\e[47m\]'
+    
+    OnLightBlack='\[\e[100m\]'
+    OnLightRed='\[\e[101m\]'
+    OnLightGreen='\[\e[102m\]'
+    OnLightYellow='\[\e[103m\]'
+    OnLightBlue='\[\e[104m\]'
+    OnLightPurple='\[\e[105m\]'
+    OnLightCyan='\[\e[106m\]'
+    OnLightWhite='\[\e[107m\]'
 
     Reset='\[\e[00m\]'
 
-    Failure=''
-    Success=''
+    full="⮀"
+    void="⮁"
+    git="⭠"
+    err="⚠"
+    suc="✓"
 
     # Add a bright white exit status for the last command
-    PS1=""
+    PS1="$OnWhite"
     # If it was successful, print a green check mark. Otherwise, print
     # a red X.
     if [[ $Last_Command == 0 ]]; then
-        PS1+="$BoldGreen$Success"
+        PS1+="$Green $suc "
     else
-        PS1+="$BoldRed$Failure"
+        PS1+="$Red $err "
     fi
-    PS1+="$Reset"
-    PS1+=" $Blue\\W$Reset"
-    # If root, just print the host in red. Otherwise, print the current user
-    # and host in green.
-    if [[ $EUID == 0 ]]; then
-        PS1+="$Red ROOT "
+    PS1+="$Reset$White$OnLightWhite$full"
+    PS1+=" $Blue\\W "
+    # Depends if on git or not
+    if test $(LANG=en_US git status 2> /dev/null | wc -l) = 0
+    then
+        PS1+="$Reset$LightWhite$full $Reset"
     else
         git_status=$(LANG=en_US git status 2> /dev/null)
         on_branch="On branch ([^${IFS}]*)"
@@ -129,21 +152,20 @@ set_prompt () {
             message="staged"
             git_message+="$color$message"
         fi
+        PS1+="$Reset$LightWhite$OnWhite$full"
         if [[ $git_status =~ $on_branch ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+="$Magenta  $Black$git_where$White  $git_message" 
+            PS1+=" $LightBlack$git $Black$git_where $White$OnLightWhite$full $git_message" 
         elif [[ $git_status =~ $on_commit ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+="$Magenta  $Black$git_where$White  $git_message" 
+            PS1+=" $LightBlack$git $Black$git_where $White$OnLightWhite$full $git_message" 
         fi
+        PS1+=" $Reset$LightWhite$full $Reset"
     fi
-    # Print the working directory and prompt marker in blue, and reset
-    # the text color to the default.
-    PS1+=" $Yellow> $Reset"
 }
 PROMPT_COMMAND='set_prompt'
 
-export BROWSER="vivaldi"
+export BROWSER="chromium"
 
 export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
