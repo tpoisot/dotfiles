@@ -1,5 +1,6 @@
 !font
-*.faceName                       : xft:Camingo Code:size=9
+*.faceName                       : xft:PragmataPro Mono:size=10
+*.font                       : xft:PragmataPro Mono:size=10
 
 URxvt*.cursorBlink               : 1
 URxvt.scrollBar                  : false
@@ -17,4 +18,4 @@ XTerm*termname                   : xterm-256color
 XTerm*locale                     : true
 XTerm*highlightSelection         : true
 
-#include ".schemes/light.xresources"
+!#include ".schemes/light.xresources"

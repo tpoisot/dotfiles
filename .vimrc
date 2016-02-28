@@ -14,7 +14,6 @@ nnoremap j gj
 nnoremap k gk
 
 " Move across windows
-
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>l
 

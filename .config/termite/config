@@ -1,14 +1,14 @@
 [options]
-font            = Iosevka 10
+font            = PragmataPro Mono 11
 
 [colors]
 
 background = rgb(253, 253, 253)
-foreground = rgb(30, 30, 30)
+foreground = rgb(40, 40, 40)
 cursor = rgb(161, 161, 161)
 
-color0 = rgb(80, 80, 80)
-color8 = rgb(100, 100, 100)
+color0 = rgb(60, 60, 60)
+color8 = rgb(90, 90, 90)
 
 # red
 color1  = #b44244
@@ -35,5 +35,7 @@ color6  = #308782
 color14 = #4f9c98
 
 
-color7 = rgb(212, 212, 212)
-color15 = rgb(232, 232, 232)
+color7 = rgb(221, 221, 221)
+color15 = rgb(241, 241, 241)
+
+
