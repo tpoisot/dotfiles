@@ -92,10 +92,10 @@ set_prompt () {
     Reset='\[\e[00m\]'
 
     full="⮀"
-    void="⮁"
+    void=" ⮁ "
     git="⭠"
-    err="⚠"
     suc="✓"
+    err="✗"
 
     # Add a bright white exit status for the last command
     PS1="$OnWhite"
@@ -125,28 +125,28 @@ set_prompt () {
             have_added=1
         fi
         if [[ $git_status =~ "not staged for commit" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Red"
             message="dirty"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "Untracked" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Yellow"
             message="new"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "to be committed" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Cyan"
             message="commit"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "Your branch is ahead of" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White/"; fi
+            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Purple"
             message="staged"
