@@ -19,7 +19,7 @@ set thorough_search
 
 set sidebar_delim = ' │ '
 set sidebar_visible = no
-set sidebar_width = 30
+set sidebar_width = 50
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 

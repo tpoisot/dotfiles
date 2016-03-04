@@ -23,7 +23,6 @@ alias lsa='lsh -A'                # and hidden files
 #alias xr="xrdb ~/.Xresources"     # Reload X resources
 xr() {
    xrdb ~/.Xresources
-   xsetroot -solid "#$(xrdb -q | grep background | cut -d# -f2)"
    feh --bg-fill --no-xinerama ~/.config/wallpaper.png 
 }
 
@@ -96,6 +95,11 @@ set_prompt () {
     git="⭠"
     suc="✓"
     err="✗"
+    clean="CL"
+    commit="CO"
+    staged="ST"
+    new="NW"
+    dirty="DR"
 
     # Add a bright white exit status for the last command
     PS1="$OnWhite"
@@ -120,7 +124,7 @@ set_prompt () {
         have_added=0
         if [[ $git_status =~ "nothing to commit" ]]; then
             color="$Green"
-            message="clean"
+            message="$clean"
             git_message+="$color$message"
             have_added=1
         fi
@@ -128,28 +132,28 @@ set_prompt () {
             if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Red"
-            message="dirty"
+            message="$dirty"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "Untracked" ]]; then
             if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Yellow"
-            message="new"
+            message="$new"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "to be committed" ]]; then
             if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Cyan"
-            message="commit"
+            message="$commit"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "Your branch is ahead of" ]]; then
             if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
             have_added=1
             color="$Purple"
-            message="staged"
+            message="$staged"
             git_message+="$color$message"
         fi
         PS1+="$Reset$LightWhite$OnWhite$full"
