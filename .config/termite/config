@@ -3,40 +3,37 @@ font            = Iosevka 11
 
 [colors]
 
-# special
-foreground      = #333333
-foreground_bold = #333333
-cursor          = #939393
-background      = #f3f3f3
+background = rgb(251, 251, 251)
+foreground = rgb(50, 50, 50)
+cursor = rgb(161, 161, 161)
 
-# black
-color0  = #555555
-color8  = #878787
+color0 = rgb(60, 60, 60)
+color8 = rgb(90, 90, 90)
 
 # red
-color1  = #d13737
-color9  = #ed4b4b
+color1  = #b44244
+color9  = #c25e5f
 
 # green
-color2  = #6d8600
-color10 = #8ba70e
+color2  = #54822b
+color10 = #66913f
 
 # yellow
-color3  = #e88501
-color11 = #ffa62f
+color3  = #e7752e
+color11 = #f49d67
 
 # blue
-color4  = #446fbd
-color12 = #5f8bdc
+color4  = #2c6d9c
+color12 = #5b8caf
 
 # magenta
-color5  = #8757ad
-color13 = #ad7ad6
+color5  = #824071
+color13 = #96688a
 
 # cyan
-color6  = #2aa650
-color14 = #43cb6c
+color6  = #308782
+color14 = #4f9c98
 
-# white
-color7  = #d8d8d8
-color15 = #ececec
+
+color7 = rgb(221, 221, 221)
+color15 = rgb(241, 241, 241)

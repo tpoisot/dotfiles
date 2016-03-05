@@ -91,6 +91,8 @@ Plug 'mrtazz/DoxygenToolkit.vim', {'for': ['c']}
 
 Plug 'gi1242/vim-tex-syntax'
 
+Plug 'nathanaelkane/vim-indent-guides'
+
 call plug#end()
 
 " NERDTree

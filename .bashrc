@@ -92,14 +92,14 @@ set_prompt () {
 
     full="⮀"
     void=" ⮁ "
-    git="⭠"
+    git="" # Used when on a branch or commit
     suc="✓"
     err="✗"
-    clean="CL"
-    commit="CO"
-    staged="ST"
-    new="NW"
-    dirty="DR"
+    clean="∅" 
+    commit="~"
+    staged="↗"
+    new="≁"
+    dirty="‼"
 
     # Add a bright white exit status for the last command
     PS1="$OnWhite"
