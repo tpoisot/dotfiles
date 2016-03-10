@@ -95,9 +95,9 @@ set_prompt () {
     git="" # Used when on a branch or commit
     suc="✓"
     err="✗"
-    clean="∅" 
+    clean="@" 
     commit="~"
-    staged="↗"
+    staged="#"
     new="≁"
     dirty="‼"
 

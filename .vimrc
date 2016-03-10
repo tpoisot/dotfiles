@@ -171,10 +171,10 @@ set mat=5 " show for .5 sec
 
 " Development notes
 if has("autocmd")
-   if v:version > 701
-      autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|BUG\)')
-      autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|CHANGED\|IDEA\|XXX\|HACK\)')
-   endif
+    if v:version > 701
+        autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|BUG\)')
+        autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|CHANGED\|IDEA\|XXX\|HACK\)')
+    endif
 endif
 
 " Highlight search
@@ -224,10 +224,11 @@ let g:pandoc#folding#fdc = 0
 let g:pandoc#biblio#sources = "bcltg"
 let g:pandoc#syntax#codeblocks#embeds#langs = ['python', 'r', 'julia', 'json', 'make', 'sh', 'c']
 let g:pandoc#syntax#conceal#cchar_overrides = {
-    \"atx": "§",
-    \"codelang": "»",
-    \"image": "◆",
-    \"newline": "¶"}
+    \"atx": "〉",
+    \"codelang": "⌈",
+    \"codeend": "⌊",
+    \"image": "▯",
+    \"newline": "¬"}
 
 " Table mode
 let g:table_mode_separator="|"
@@ -247,12 +248,12 @@ nnoremap <Leader>g :Goyo<CR>
 
 " Tags
 let g:tagbar_type_r = {
-   \'ctagstype' : 'r',
-   \'kinds' : [
-      \ 'f:Functions',
-      \ 'g:GlobalVariables',
-      \ 'v:FunctionVariables'
-   \]
+    \'ctagstype' : 'r',
+    \'kinds' : [
+        \ 'f:Functions',
+        \ 'g:GlobalVariables',
+        \ 'v:FunctionVariables'
+    \]
 \}
 
 let g:tagbar_type_julia = {
