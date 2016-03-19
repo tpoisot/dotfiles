@@ -1,6 +1,6 @@
 !font
-*.faceName                       : xft:PragmataPro Mono:size=10
 *.font                       : xft:PragmataPro Mono:size=10
+*.faceName: -*-dina-medium-r-*-*-13-*-*-*-*-*-*-*
 
 URxvt*.cursorBlink               : 1
 URxvt.scrollBar                  : false

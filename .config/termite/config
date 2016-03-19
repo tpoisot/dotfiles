@@ -1,14 +1,14 @@
 [options]
-font            = IosevkaNL 11
+font            = IosevkaNL 12
 
 [colors]
 
-background = rgb(252, 252, 252)
-foreground = rgb(52, 52, 52)
+foreground = rgb(252, 252, 252)
+background = rgb(52, 52, 52)
 cursor = rgb(191, 191, 191)
 
-color0 = rgb(60, 60, 60)
-color8 = rgb(90, 90, 90)
+color0 = rgb(72, 72, 72)
+color8 = rgb(102, 102, 102)
 
 # red
 color1  = #b44244
@@ -35,5 +35,5 @@ color6  = #308782
 color14 = #4f9c98
 
 
-color7 = rgb(211, 211, 211)
+color7 = rgb(201, 201, 201)
 color15 = rgb(232, 232, 232)

@@ -16,10 +16,10 @@ color status        magenta           default
 color search        brightcyan     default
 
 color index         green        default '~U'
-color index         black          default '~R'
+color index         white          default '~R'
 color index         yellow            default '~F'
 color index         blue           default '~T'
-color index         white          default '~D'
+color index         black          default '~D'
 
 
 color index brightblack  default "~v~(!~N)~(!~F)" # collapsed thread with no New or Flagged
@@ -27,4 +27,4 @@ color index brightyellow     default "~v~(~F)~(!~N)"  # collapsed thread with Fl
 color index brightblue   default "~v~(~N)"        # collapsed thread with New
 
 # set arrow_cursor
-color indicator     default       white
+color indicator     default       black
