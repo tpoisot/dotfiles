@@ -58,19 +58,40 @@ Workspace() {
    WSI=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
    WLIST=""
    #for workspace in 0 1 2 3 4
-   for e in $(bspc control --get-status | cut -d':' -f2-6 | tr ':' '\n')
+   #for e in $(bspc control --get-status | cut -d':' -f2-6 | tr ':' '\n')
+   # List of desktops
+   DESK=($(wmctrl -d | cut -d' ' -f1 | sort))
+
+   # List of desktops with active windows
+   OCCUPIED=($(wmctrl -l | cut -d' ' -f3 | sort | uniq))
+
+   # Loop
+   for i in $(eval echo "{1..${#DESK[@]}}")
    do
-      if [ "${e:0:1}" == "O" ]; then
-         WLIST="$WLIST $(A)$(U)$(expr ${e:1:2} + 1)$(D)"
-      elif [ "${e:0:1}" == "F" ]; then
-         WLIST="$WLIST $(A)$(expr ${e:1:2} + 1)$(D)"
-      elif [ "${e:0:1}" == "f" ]; then
-         WLIST="$WLIST $(D)$(expr ${e:1:2} + 1)$(D)"
-      elif [ "${e:0:1}" == "o" ]; then
-          WLIST="$WLIST $(D)$(U)$(expr ${e:1:2} + 1)$(D)"
-      fi
+       CURRENTFORMAT=""
+
+       # Get the occupation status
+       for havew in ${OCCUPIED[@]}
+       do
+           if [[ $havew == $(expr $i - 1) ]]; then
+               CURRENTFORMAT="$CURRENTFORMAT$(I)"
+           else
+               CURRENTFORMAT="$CURRENTFORMAT"
+           fi
+       done
+       
+       # Get the current activity status
+       ISACTIVE=$(wmctrl -d | sed "$i q;d" | cut -d' ' -f3)
+       if [[ $ISACTIVE == *"*"* ]]; then
+           CURRENTFORMAT="$CURRENTFORMAT$(U)"
+       else
+           CURRENTFORMAT="$CURRENTFORMAT"
+       fi
+
+       # Output
+       echo -n " $CURRENTFORMAT$i$(D)"
+
    done
-   echo -n "$WLIST"
 }
 
 HDD() {
