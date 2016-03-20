@@ -3,37 +3,40 @@ font            = IosevkaNL 12
 
 [colors]
 
-foreground = rgb(252, 252, 252)
-background = rgb(52, 52, 52)
-cursor = rgb(191, 191, 191)
+# special
+foreground      = #e5e8e6
+cursor          = #555856
+background      = #1d1f21
 
-color0 = rgb(72, 72, 72)
-color8 = rgb(102, 102, 102)
+# black
+color0  = #282a2e
+color8  = #373b41
 
 # red
-color1  = #b44244
-color9  = #c25e5f
+color1  = #a54242
+color9  = #cc6666
 
 # green
-color2  = #54822b
-color10 = #66913f
+color2  = #8c9440
+color10 = #b5bd68
 
 # yellow
-color3  = #e7752e
-color11 = #f49d67
+color3  = #de935f
+color11 = #f0c674
 
 # blue
-color4  = #2c6d9c
-color12 = #5b8caf
+color4  = #5f819d
+color12 = #81a2be
 
 # magenta
-color5  = #824071
-color13 = #96688a
+color5  = #85678f
+color13 = #b294bb
 
 # cyan
-color6  = #308782
-color14 = #4f9c98
+color6  = #5e8d87
+color14 = #8abeb7
 
+# white
+color7  = #707880
+color15 = #c5c8c6
 
-color7 = rgb(201, 201, 201)
-color15 = rgb(232, 232, 232)

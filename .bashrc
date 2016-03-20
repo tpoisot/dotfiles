@@ -95,7 +95,7 @@ set_prompt () {
     git="" # Used when on a branch or commit
     suc="✓"
     err="✗"
-    clean="@" 
+    clean="="
     commit="~"
     staged="#"
     new="≁"
@@ -159,10 +159,10 @@ set_prompt () {
         PS1+="$Reset$LightBlack$OnBlack$full"
         if [[ $git_status =~ $on_branch ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+=" $Cyan$git $White$git_where $Black$OnLightBlack$full $git_message" 
+            PS1+=" $Cyan$git $LightWhite$git_where $Black$OnLightBlack$full $git_message" 
         elif [[ $git_status =~ $on_commit ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+=" $Cyan$git $White$git_where $Black$OnLightBlack$full $git_message" 
+            PS1+=" $Cyan$git $LightWhite$git_where $Black$OnLightBlack$full $git_message" 
         fi
         PS1+=" $Reset$LightBlack$full $Reset"
     fi
