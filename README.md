@@ -1,9 +1,7 @@
 # Tim's dotfiles
 
 They're the best. Handcrafted over the course of significantly less than a
-single generation. There are a lot of inter-dependencies, by the way. Be
-prepared for breakage if you only use a part of them. Most of the things
-you see read, in one way or another, from `~/.Xresources`.
+single generation.
 
 I use Arch Linux, so some widgets, paths, etc, may/will need to be adapted.
 
@@ -33,7 +31,7 @@ the appropriate documentation.
 
 ## Terminal
 
-`xterm` and that's about it. There are some nice `.dircolors` too.
+`termite` and that's about it. There are some nice `.dircolors` too.
 
 ## Editor
 
