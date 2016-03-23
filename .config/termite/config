@@ -4,40 +4,40 @@ font            = IosevkaNL 11
 [colors]
 
 # special
-foreground      = #d5d8d6
-cursor          = #555856
+foreground      = #e5e8e6
+foreground_bold = #e5e8e6
+cursor          = #e5e8e6
 background      = #1d1f21
 
 # black
-color0  = #282a2e
-color8  = #373b41
+color0  = #2d2f31
+color8  = #3d3f41
 
 # red
-color1  = #a54242
-color9  = #cc6666
+color1  = #cc6666
+color9  = #e77a7a
 
 # green
-color2  = #8c9440
-color10 = #b5bd68
+color2  = #b5bd68
+color10 = #d3dc80
 
 # yellow
-color3  = #de935f
-color11 = #f0c674
+color3  = #f0c674
+color11 = #fdd381
 
 # blue
-color4  = #5f819d
-color12 = #81a2be
+color4  = #81a2be
+color12 = #9cbcd7
 
 # magenta
-color5  = #85678f
-color13 = #b294bb
+color5  = #b294bb
+color13 = #ceb2d6
 
 # cyan
-color6  = #5e8d87
-color14 = #8abeb7
+color6  = #8abeb7
+color14 = #a2d6cf
 
 # white
-color7  = #707880
-color15 = #c5c8c6
-
+color7  = #c5c8c6
+color15 = #d5d8d6
 

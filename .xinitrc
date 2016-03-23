@@ -1,5 +1,4 @@
 eval $(ssh-agent)
-compton &
 setxkbmap ca
 xrdb .Xresources
 xbindkeys
