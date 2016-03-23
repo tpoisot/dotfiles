@@ -93,6 +93,9 @@ Plug 'gi1242/vim-tex-syntax'
 
 Plug 'nathanaelkane/vim-indent-guides'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 call plug#end()
 
 " NERDTree

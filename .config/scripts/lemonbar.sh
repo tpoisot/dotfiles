@@ -68,7 +68,7 @@ Workspace() {
    # Loop
    for i in $(eval echo "{1..${#DESK[@]}}")
    do
-       CURRENTFORMAT=""
+       CURRENTFORMAT="$(D)"
 
        # Get the occupation status
        for havew in ${OCCUPIED[@]}

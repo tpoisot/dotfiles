@@ -1,12 +1,7 @@
 #! /bin/bash
 
-# TODO get offset and size from xrandr or other
-
 lemonbarrunning=`pidof lemonbar | wc -w`
 connectedscreens=`xrandr | grep " HDMI2" | wc -l`
-#xftfont=`xrdb -q | grep faceName | sed 's/*.faceName://g' | tr -d '\t' | sed 's/xft://g'`
-#xftfont=$xftfont":style=Bold"
-#font=$xftfont
 
 if test $connectedscreens = 1
 then
@@ -34,5 +29,6 @@ else
    bspc config -m $activescreen bottom_padding 12
    bspc config -m $activescreen top_padding 0
    ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1874x17+22+7 -u1 -f IosevkaNL-10 -f FontAwesome-11 -o 0 -b -d & 
+   #~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1920x19 -u1 -f IosevkaNL-10 -o 0 -b -d & 
 fi;
 

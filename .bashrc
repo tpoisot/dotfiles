@@ -169,7 +169,7 @@ set_prompt () {
 }
 PROMPT_COMMAND='set_prompt'
 
-export BROWSER="firefox"
+export BROWSER="chromium"
 
 export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
