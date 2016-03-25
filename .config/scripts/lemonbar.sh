@@ -8,12 +8,16 @@ fcol() { # Foreground
     echo -n "%{F#$(tcol $1)}"
 }
 
+bcol() { # Background
+    echo -n "%{B#$(tcol $1)}"
+}
+
 ucol() { # Foreground
     echo -n "%{U#$(tcol $1)}"
 }
 
 reset() { # Reset
-    echo -n "%{F#$(tcol foreground)}%{U-}"
+    echo -n "$(fcol foreground)$(bcol background)%{U-}"
 }
 
 icon() {
@@ -21,11 +25,11 @@ icon() {
 }
 
 rsep() {
-    echo -e "  %{F#$(tcol color15)}$(reset)  "
+    echo -e "  $(fcol color15)$(reset)  "
 }
 
 lsep() {
-    echo -e "  %{F#$(tcol color15)}$(reset)  "
+    echo -e "  $(fcol color15)$(reset)  "
 }
 
 A() { # Active
@@ -112,7 +116,7 @@ Workspace() {
         # Get the current activity status
         ISACTIVE=$(wmctrl -d | sed "$i q;d" | cut -d' ' -f3)
         if [[ $ISACTIVE == *"*"* ]]; then
-            CURRENTFORMAT+="$(fcol color13)"
+            CURRENTFORMAT+="$(fcol color1)"
         else
             CURRENTFORMAT+="$(fcol color7)"
         fi

@@ -22,6 +22,6 @@ then
 else
    bspc config -m $activescreen top_padding 27
    bspc config -m $activescreen bottom_padding 0
-   ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1920x27+0+0 -u1 -f IosevkaNL-10 -f FontAwesome-11 -o 0 -d & 
+   ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1920x27+0+0 -u1 -f IosevkaNL-11 -f FontAwesome-11 -o 0 -d & 
 fi;
 
