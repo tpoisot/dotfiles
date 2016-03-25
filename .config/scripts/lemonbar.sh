@@ -21,7 +21,7 @@ reset() { # Reset
 }
 
 icon() {
-    echo -n "%{F#$(tcol color7)}"
+    echo -n "%{F#$(tcol color8)}"
 }
 
 rsep() {
