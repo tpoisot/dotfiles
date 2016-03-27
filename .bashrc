@@ -91,16 +91,16 @@ set_prompt () {
 
     Reset='\[\e[00m\]'
 
-    full="⮀"
-    void=" ⮁ "
-    git="" # Used when on a branch or commit
+    void=" " 
+    prompt=" > "
+    git="" # Used when on a branch or commit
     suc="✓"
     err="✗"
-    clean="="
-    commit="~"
-    staged="#"
-    new="≁"
-    dirty="‼"
+    clean="0"
+    commit="C"
+    staged="S"
+    new="N"
+    dirty="D"
 
     # Add a bright white exit status for the last command
     PS1="$Reset"
@@ -112,11 +112,11 @@ set_prompt () {
         PS1+="$Red $err "
     fi
     PS1+="$Reset$Cyan$void"
-    PS1+="$Yellow\\W"
+    PS1+="$Purple\\W"
     # Depends if on git or not
     if test $(LANG=en_US git status 2> /dev/null | wc -l) = 0
     then
-        PS1+="$Reset$Purple$void$Reset"
+        PS1+=""
     else
         git_status=$(LANG=en_US git status 2> /dev/null)
         on_branch="On branch ([^${IFS}]*)"
@@ -130,29 +130,29 @@ set_prompt () {
             have_added=1
         fi
         if [[ $git_status =~ "not staged for commit" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
-            have_added=1
+            #if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
+            #have_added=1
             color="$LightRed"
             message="$dirty"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "Untracked" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
-            have_added=1
+            #if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
+            #have_added=1
             color="$LightYellow"
             message="$new"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "to be committed" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
-            have_added=1
+            #if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
+            #have_added=1
             color="$LightCyan"
             message="$commit"
             git_message+="$color$message"
         fi
         if [[ $git_status =~ "Your branch is ahead of" ]]; then
-            if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
-            have_added=1
+            #if [[ $have_added == 1 ]]; then git_message+="$White$void"; fi
+            #have_added=1
             color="$LightPurple"
             message="$staged"
             git_message+="$color$message"
@@ -160,13 +160,13 @@ set_prompt () {
         PS1+="$Reset$Cyan$void"
         if [[ $git_status =~ $on_branch ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+="$Blue$git $LightBlue$git_where$cyan$void$git_message" 
+            PS1+="$White$git $Blue$git_where $git_message" 
         elif [[ $git_status =~ $on_commit ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+="$Blue$git $LightBlue$git_where$cyan$void$git_message" 
+            PS1+="$White$git $Blue$git_where $git_message" 
         fi
-        PS1+="$Reset$Purple$void$Reset"
     fi
+    PS1+="$Reset$Yellow$prompt$Reset"
 }
 PROMPT_COMMAND='set_prompt'
 

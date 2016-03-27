@@ -8,28 +8,24 @@ fcol() { # Foreground
     echo -n "%{F#$(tcol $1)}"
 }
 
-bcol() { # Background
-    echo -n "%{B#$(tcol $1)}"
-}
-
 ucol() { # Foreground
     echo -n "%{U#$(tcol $1)}"
 }
 
 reset() { # Reset
-    echo -n "$(fcol foreground)$(bcol background)%{U-}"
+    echo -n "$(fcol foreground)%{U-}"
 }
 
 icon() {
-    echo -n "%{F#$(tcol color8)}"
+    echo -n "$(fcol color15)"
 }
 
 rsep() {
-    echo -e "  $(fcol color15)$(reset)  "
+    echo -e "  $(fcol color7)$(reset)  "
 }
 
 lsep() {
-    echo -e "  $(fcol color15)$(reset)  "
+    echo -e "  $(fcol color7)$(reset)  "
 }
 
 A() { # Active
@@ -87,8 +83,8 @@ Battery() {
 }
 
 Workspace() {
-    empty="○"
-    occupied="●"
+    empty="□"
+    occupied="■"
     WSI=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
     WLIST=""
     #for workspace in 0 1 2 3 4
@@ -173,10 +169,10 @@ Spotify () {
       else
          artist=$(echo "$status" | grep "xesam:artist" -b2 | tail -n 1 | cut -d'"' -f2)
          title=$(echo "$status" | grep "xesam:title" -b1 | tail -n 1 | cut -d'"' -f2)
-         echo -e "$(D)\uf1bc $(A)$title $(I)by $(A)$artist"
+         echo -e "$(icon)\uf1bc $(fcol color5)$title $(icon)by $(fcol color13)$artist"
       fi
    else
-       echo -e "$(D)\uf1bc $(I)closed"
+       echo -e "$(icon)\uf1bc $(fcol color8)closed"
    fi
 }
 
@@ -198,7 +194,7 @@ while true; do
    # Caps lock
    if test $(xset q | grep Caps | cut -d: -f3 | cut -d' ' -f4) = "on"
    then
-       status="$status$(rsep) $(D)\uf023 $(A)Caps locked"
+       status="$status$(rsep) $(icon)\uf023 $(fcol color1)Caps locked"
    fi
    # Workspace indicator
    status="$status%{r}"
@@ -209,6 +205,6 @@ while true; do
        status+="$(lsep)$(icon)\uf1c0 $(fcol color1)Backing up"
    fi
    status+="$(lsep)$(Clock)"
-   echo -e "     $status     "
+   echo -e " $status "
    sleep 1;
 done

@@ -3,6 +3,8 @@
 lemonbarrunning=`pidof lemonbar | wc -w`
 connectedscreens=`xrandr | grep " HDMI2" | wc -l`
 
+mainfont="IosevkaNL:size=11"
+
 if test $connectedscreens = 1
 then
    activescreen=`xrandr | grep "HDMI2" | cut -d' ' -f1`
@@ -20,8 +22,8 @@ then
    killall lemonbar
    for pid in $(ps -ef | grep "lemonbar.sh" | awk '{print $2}'); do kill -9 $pid; done
 else
-   bspc config -m $activescreen top_padding 27
+   bspc config -m $activescreen top_padding 42
    bspc config -m $activescreen bottom_padding 0
-   ~/.config/scripts/lemonbar.sh | lemonbar -B"#$background" -F"#$foreground" -g1920x27+0+0 -u1 -f IosevkaNL-11 -f FontAwesome-11 -o 0 -d & 
+   ~/.config/scripts/lemonbar.sh | lemonbar -B"#00$background" -F"#$foreground" -g1866x16+27+27 -u1 -f "$mainfont" -f FontAwesome-13 -o 0 -d & 
 fi;
 

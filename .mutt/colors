@@ -12,14 +12,14 @@ color message       green          default
 color tree          white  default
 
 color attachment    brightmagenta  default
-color status        blue           default
+color status        cyan           default
 color search        brightcyan     default
 
-color index         brightblue        default '~U'
-color index         black                default '~R'
+color index         blue        default '~U'
+color index         default                default '~R'
 color index         yellow         default '~F'
 color index         brightred            default '~T'
-color index         white                default '~D'
+color index         black                default '~D'
 
 
 color index brightblack  default "~v~(!~N)~(!~F)" # collapsed thread with no New or Flagged
@@ -27,4 +27,4 @@ color index brightyellow     default "~v~(~F)~(!~N)"  # collapsed thread with Fl
 color index brightblue   default "~v~(~N)"        # collapsed thread with New
 
 # set arrow_cursor
-color indicator     brightwhite       green
+color indicator black magenta
