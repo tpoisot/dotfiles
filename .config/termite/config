@@ -1,42 +1,42 @@
 [options]
-font            = IosevkaNL
+font = IosevkaNL
 
 [colors]
 
 # special
-foreground      = #f2f0ec
-cursor          = #949389
-background      = #2d2d2d
+foreground      = #1e1e1e
+cursor          = #b4b4b4
+background      = #fcfcfc
 
 # black
-color0  = #403e3e
-color8  = #747369
+color0  = #282828
+color8  = #5a5a5a
 
 # red
-color1  = #f2777a
-color9  = #fc9396
+color1  = #b44244
+color9  = #c36769
 
 # green
-color2  = #99cc99
-color10 = #bee4be
+color2  = #54822b
+color10 = #769b55
 
 # yellow
-color3  = #ffcc66
-color11 = #ffdf9f
+color3  = #e7752e
+color11 = #eb9057
 
 # blue
-color4  = #6699cc
-color12 = #96bee7
+color4  = #2c6d9c
+color12 = #568aaf
 
 # magenta
-color5  = #cc99cc
-color13 = #dec0de
+color5  = #824085
+color13 = #9b668d
 
 # cyan
-color6  = #66cccc
-color14 = #8bdede
+color6  = #448c62
+color14 = #69a381
 
 # white
-color7  = #9c9b97
-color15 = #d3d0c8
+color7  = #c0c0c0
+color15 = #f2f2f2
 

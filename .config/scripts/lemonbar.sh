@@ -83,8 +83,8 @@ Battery() {
 }
 
 Workspace() {
-    empty="□"
-    occupied="■"
+    empty="○"
+    occupied="●"
     WSI=$(xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}')
     WLIST=""
     #for workspace in 0 1 2 3 4
@@ -176,6 +176,11 @@ Spotify () {
    fi
 }
 
+Cal(){
+    next=$(gcalcli agenda --nocolor --nostarted | head -2 | tail -1)
+    echo -e "$(icon)\uf274 $(fcol color7)$next"
+}
+
 while true; do
    # Clock, emails
    status="$(Email)"
@@ -204,6 +209,7 @@ while true; do
    then
        status+="$(lsep)$(icon)\uf1c0 $(fcol color1)Backing up"
    fi
+   #status+="$(lsep)$(Cal)"
    status+="$(lsep)$(Clock)"
    echo -e " $status "
    sleep 1;

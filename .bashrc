@@ -35,6 +35,9 @@ alias vin=vim
 alias bim=vim
 alias edit=vim
 
+# Vivaldi
+alias vivaldi=vivaldi-beta
+
 # Ranger, fast
 alias r=ranger
 
@@ -92,10 +95,10 @@ set_prompt () {
     Reset='\[\e[00m\]'
 
     void=" " 
-    prompt=" > "
-    git="" # Used when on a branch or commit
-    suc="✓"
-    err="✗"
+    prompt=" ▶ "
+    git="" # Used when on a branch or commit
+    suc="●"
+    err="●"
     clean="0"
     commit="C"
     staged="S"
@@ -106,13 +109,15 @@ set_prompt () {
     PS1="$Reset"
     # If it was successful, print a green check mark. Otherwise, print
     # a red X.
+    PS1+="$White["
     if [[ $Last_Command == 0 ]]; then
-        PS1+="$Green $suc "
+        PS1+="$Green$suc"
     else
-        PS1+="$Red $err "
+        PS1+="$Red$err"
     fi
-    PS1+="$Reset$Cyan$void"
-    PS1+="$Purple\\W"
+    PS1+="$White]"
+    PS1+="$Reset$void"
+    PS1+="$White[$Purple\\W$White]"
     # Depends if on git or not
     if test $(LANG=en_US git status 2> /dev/null | wc -l) = 0
     then
@@ -160,17 +165,17 @@ set_prompt () {
         PS1+="$Reset$Cyan$void"
         if [[ $git_status =~ $on_branch ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+="$White$git $Blue$git_where $git_message" 
+            PS1+="$White[$LightBlack$git $Blue$git_where $git_message$White]" 
         elif [[ $git_status =~ $on_commit ]]; then
             git_where=${BASH_REMATCH[1]}
-            PS1+="$White$git $Blue$git_where $git_message" 
+            PS1+="$White[$LightBlack$git $Blue$git_where $git_message$White]" 
         fi
     fi
     PS1+="$Reset$Yellow$prompt$Reset"
 }
 PROMPT_COMMAND='set_prompt'
 
-export BROWSER="chromium"
+export BROWSER="vivaldi-beta"
 
 export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
@@ -190,3 +195,4 @@ JULIA_INPUT_COLOR=blue
 JULIA_ANSWER_COLOR=normal
 export JULIA_ANSWER_COLOR
 export JULIA_INPUT_COLOR
+
